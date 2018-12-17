@@ -45,6 +45,8 @@
 		2FB342C521C646850027D654 /* LCArrowCellTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2FB342C021C646850027D654 /* LCArrowCellTableViewCell.xib */; };
 		2FB342C621C646850027D654 /* LCArrowView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FB342C121C646850027D654 /* LCArrowView.m */; };
 		2FB342C721C646850027D654 /* LCArrowTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FB342C321C646850027D654 /* LCArrowTableView.m */; };
+		2FE5E09A21C7406900C00F24 /* ZKScrollViewMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FE5E09921C7406800C00F24 /* ZKScrollViewMenu.m */; };
+		2FE5E09D21C7559A00C00F24 /* ZKWebBrowseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FE5E09C21C7559A00C00F24 /* ZKWebBrowseViewController.m */; };
 		60F939F0B7E0C06DE5608961 /* libPods-ZK_OnlyOne_Project.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5AFD847F7E9499311346F4F5 /* libPods-ZK_OnlyOne_Project.a */; };
 /* End PBXBuildFile section */
 
@@ -119,6 +121,10 @@
 		2FB342C121C646850027D654 /* LCArrowView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCArrowView.m; sourceTree = "<group>"; };
 		2FB342C221C646850027D654 /* LCArrowCellTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCArrowCellTableViewCell.h; sourceTree = "<group>"; };
 		2FB342C321C646850027D654 /* LCArrowTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCArrowTableView.m; sourceTree = "<group>"; };
+		2FE5E09821C7406800C00F24 /* ZKScrollViewMenu.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZKScrollViewMenu.h; sourceTree = "<group>"; };
+		2FE5E09921C7406800C00F24 /* ZKScrollViewMenu.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZKScrollViewMenu.m; sourceTree = "<group>"; };
+		2FE5E09B21C7559A00C00F24 /* ZKWebBrowseViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZKWebBrowseViewController.h; sourceTree = "<group>"; };
+		2FE5E09C21C7559A00C00F24 /* ZKWebBrowseViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZKWebBrowseViewController.m; sourceTree = "<group>"; };
 		5AFD847F7E9499311346F4F5 /* libPods-ZK_OnlyOne_Project.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ZK_OnlyOne_Project.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BA3FE585694D204CA0F83791 /* Pods-ZK_OnlyOne_Project.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZK_OnlyOne_Project.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ZK_OnlyOne_Project/Pods-ZK_OnlyOne_Project.debug.xcconfig"; sourceTree = "<group>"; };
 		F722BEA4DD1F1C4D3FB56D00 /* Pods-ZK_OnlyOne_Project.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZK_OnlyOne_Project.release.xcconfig"; path = "Pods/Target Support Files/Pods-ZK_OnlyOne_Project/Pods-ZK_OnlyOne_Project.release.xcconfig"; sourceTree = "<group>"; };
@@ -162,7 +168,6 @@
 				2F1B684021BF93380082920D /* Resource(资源) */,
 				2F1B683F21BF93290082920D /* Custom(自定义视图) */,
 				2F1B683E21BF931C0082920D /* Base(基类) */,
-				2F1B686721BFB7820082920D /* Images.xcassets */,
 			);
 			path = ZK_OnlyOne_Project;
 			sourceTree = "<group>";
@@ -174,6 +179,8 @@
 				2F1B682621BF92770082920D /* ZKAppDelegate.m */,
 				2F2FA14321C39D4000A343DF /* ZKBaseViewController.h */,
 				2F2FA14421C39D4000A343DF /* ZKBaseViewController.m */,
+				2FE5E09B21C7559A00C00F24 /* ZKWebBrowseViewController.h */,
+				2FE5E09C21C7559A00C00F24 /* ZKWebBrowseViewController.m */,
 				2F1B686C21C0E5630082920D /* ZKNavigationViewController.h */,
 				2F1B686D21C0E5630082920D /* ZKNavigationViewController.m */,
 				2F1B687221C0F03A0082920D /* ZKTabBarController.h */,
@@ -196,6 +203,7 @@
 			children = (
 				2F1B682B21BF92770082920D /* Main.storyboard */,
 				2F1B683121BF92790082920D /* Assets.xcassets */,
+				2F1B686721BFB7820082920D /* Images.xcassets */,
 				2F1B683321BF92790082920D /* LaunchScreen.storyboard */,
 				2F1B683621BF92790082920D /* Info.plist */,
 				2F1B683721BF92790082920D /* main.m */,
@@ -256,6 +264,8 @@
 				2F1B685B21BF97F40082920D /* ZKEmptyView.m */,
 				2F1B686F21C0E9EE0082920D /* ZKNetBadView.h */,
 				2F1B687021C0E9EE0082920D /* ZKNetBadView.m */,
+				2FE5E09821C7406800C00F24 /* ZKScrollViewMenu.h */,
+				2FE5E09921C7406800C00F24 /* ZKScrollViewMenu.m */,
 			);
 			path = "CustomControl(自定义控件)";
 			sourceTree = "<group>";
@@ -565,6 +575,7 @@
 				2FB342AE21C625B50027D654 /* UIBarButtonItem+Extension.m in Sources */,
 				2F1B687D21C2070F0082920D /* ZKDuanZiViewController.m in Sources */,
 				2F1B687121C0E9EE0082920D /* ZKNetBadView.m in Sources */,
+				2FE5E09A21C7406900C00F24 /* ZKScrollViewMenu.m in Sources */,
 				2F1B688C21C233570082920D /* ZKHomeCell.m in Sources */,
 				2F1B685921BF974C0082920D /* ZKButton.m in Sources */,
 				2F1B686E21C0E5630082920D /* ZKNavigationViewController.m in Sources */,
@@ -572,6 +583,7 @@
 				2F1B684621BF93770082920D /* ZKManager.m in Sources */,
 				2F1B688721C207610082920D /* ZKToolViewController.m in Sources */,
 				2F1B685221BF963C0082920D /* UILabel+Extension.m in Sources */,
+				2FE5E09D21C7559A00C00F24 /* ZKWebBrowseViewController.m in Sources */,
 				2F1B683021BF92770082920D /* ZK_OnlyOne_Project.xcdatamodeld in Sources */,
 				2F1B683821BF92790082920D /* main.m in Sources */,
 				2FB342BB21C62B950027D654 /* ZKDuanziObj.m in Sources */,
@@ -725,7 +737,20 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 22N2A7Y3MW;
-				GCC_PREFIX_HEADER = "/Users/a01/Documents/ZK_OnlyOne_Project/ZK_OnlyOne_Project/Resource(资源)/ZKPch.pch";
+				GCC_PREFIX_HEADER = "/Users/a01/Desktop/ZJ_OnlyOne_Project/ZK_OnlyOne_Project/ZK_OnlyOne_Project/Resource(资源)/ZKPch.pch";
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"${PODS_ROOT}/Headers/Public\"",
+					"\"${PODS_ROOT}/Headers/Public/AFNetworking\"",
+					"\"${PODS_ROOT}/Headers/Public/MJExtension\"",
+					"\"${PODS_ROOT}/Headers/Public/MJRefresh\"",
+					"\"${PODS_ROOT}/Headers/Public/Masonry\"",
+					"\"${PODS_ROOT}/Headers/Public/Shimmer\"",
+					"\"${PODS_ROOT}/Headers/Public/WRNavigationBar\"",
+					"\"${PODS_ROOT}/Headers/Public/WSProgressHUD\"",
+					"\"${PODS_ROOT}/Headers/Public/YYModel\"",
+					"\"${PODS_ROOT}/Headers/Public/zhUITableViewAnimations\"",
+				);
 				INFOPLIST_FILE = "/Users/a01/Documents/ZK_OnlyOne_Project/ZK_OnlyOne_Project/Resource(资源)/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -747,7 +772,20 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 22N2A7Y3MW;
-				GCC_PREFIX_HEADER = "/Users/a01/Documents/ZK_OnlyOne_Project/ZK_OnlyOne_Project/Resource(资源)/ZKPch.pch";
+				GCC_PREFIX_HEADER = "/Users/a01/Desktop/ZJ_OnlyOne_Project/ZK_OnlyOne_Project/ZK_OnlyOne_Project/Resource(资源)/ZKPch.pch";
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"${PODS_ROOT}/Headers/Public\"",
+					"\"${PODS_ROOT}/Headers/Public/AFNetworking\"",
+					"\"${PODS_ROOT}/Headers/Public/MJExtension\"",
+					"\"${PODS_ROOT}/Headers/Public/MJRefresh\"",
+					"\"${PODS_ROOT}/Headers/Public/Masonry\"",
+					"\"${PODS_ROOT}/Headers/Public/Shimmer\"",
+					"\"${PODS_ROOT}/Headers/Public/WRNavigationBar\"",
+					"\"${PODS_ROOT}/Headers/Public/WSProgressHUD\"",
+					"\"${PODS_ROOT}/Headers/Public/YYModel\"",
+					"\"${PODS_ROOT}/Headers/Public/zhUITableViewAnimations\"",
+				);
 				INFOPLIST_FILE = "/Users/a01/Documents/ZK_OnlyOne_Project/ZK_OnlyOne_Project/Resource(资源)/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

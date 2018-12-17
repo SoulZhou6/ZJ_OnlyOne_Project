@@ -8,7 +8,7 @@
 
 #import "ZKAppDelegate.h"
 #import "ZKTabBarController.h"
-#import "WRNavigationBar.h"
+
 @interface ZKAppDelegate ()
 
 @end
@@ -21,26 +21,7 @@
     
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     self.window.backgroundColor = [UIColor whiteColor];
-
-    
-    
     self.window.rootViewController = [ZKTabBarController tabbar];
-    
-    // 下面是直接用WRNavigationBar 处理导航栏的透明度
-//    MainNavBarColor = [UIColor colorWithRed:0/255.0 green:175/255.0 blue:240/255.0 alpha:1];
-//    MainViewColor   = [UIColor colorWithRed:126/255.0 green:126/255.0 blue:126/255.0 alpha:1];
-    
-    // 设置导航栏默认的背景颜色
-    [WRNavigationBar wr_setDefaultNavBarBarTintColor:[UIColor whiteColor]];
-    // 设置导航栏所有按钮的默认颜色
-    [WRNavigationBar wr_setDefaultNavBarTintColor:[UIColor whiteColor]];
-    // 设置导航栏标题默认颜色
-    [WRNavigationBar wr_setDefaultNavBarTitleColor:[UIColor blackColor]];
-    // 统一设置状态栏样式
-//    [WRNavigationBar wr_setDefaultStatusBarStyle:UIStatusBarStyleLightContent];
-    // 如果需要设置导航栏底部分割线隐藏，可以在这里统一设置
-    [WRNavigationBar wr_setDefaultNavBarShadowImageHidden:YES];
-    
     [self.window makeKeyAndVisible];
     return YES;
 }

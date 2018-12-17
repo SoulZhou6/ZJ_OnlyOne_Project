@@ -6,7 +6,6 @@ target:ZK_OnlyOne_Project do
     
     pod 'MJRefresh'
     pod 'AFNetworking'
-    pod 'WRNavigationBar'
     pod 'Masonry'
     pod 'YYModel'
     pod 'WSProgressHUD'

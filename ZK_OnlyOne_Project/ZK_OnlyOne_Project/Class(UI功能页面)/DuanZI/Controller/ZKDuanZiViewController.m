@@ -12,8 +12,7 @@
 #import "zhTableViewAnimations.h"
 #import "LCArrowView.h"
 
-@interface ZKDuanZiViewController ()<UITableViewDelegate,UITableViewDataSource,SelectIndexPathDelegate>
-@property (nonatomic,strong)UITableView * tableView;
+@interface ZKDuanZiViewController ()<SelectIndexPathDelegate>
 @property (nonatomic,strong)LCArrowView * popView;
 @end
 
@@ -26,57 +25,39 @@
 }
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.view.backgroundColor = [UIColor whiteColor];
-    jokeArray = [[NSMutableArray alloc]init];
-    selectIndex = 0;
-    pageIndex = 1;
-    [self.view addSubview:self.tableView];
     
-    self.navigationItem.rightBarButtonItem = [UIBarButtonItem itemWithImageName:@"zk_dz_select_normal" highImageName:@"zk_dz_select_height" target:self action:@selector(clickSelectAction)];
+    self.view.backgroundColor = [UIColor whiteColor];
+    [self setStyleView];
     [self requestJokeData];
    
 }
-
-
-
-#pragma mark - 懒加载视图
-- (UITableView *)tableView{
+#pragma mark - 设置界面
+- (void)setStyleView{
     
-    if (_tableView == nil) {
+    jokeArray = [[NSMutableArray alloc]init];
+    selectIndex = 0;
+    pageIndex = 1;
+    self.tableView.frame =  CGRectMake(0, 0 , Screen_Width, Screen_Height - ZK_TopHeight-ZK_TabBarHeight);
+    self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+    UIView * headView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, 0, 10)];
+    headView.backgroundColor = [UIColor groupTableViewBackgroundColor];
+    self.tableView.tableHeaderView = headView;
+    MJRefreshNormalHeader *header = [MJRefreshNormalHeader headerWithRefreshingTarget:self refreshingAction:@selector(refreshData)];
+    self.tableView.mj_header = header;
+    WeakSelf;
+    self.tableView.mj_footer = [MJRefreshAutoFooter footerWithRefreshingBlock:^{
         
-        
-        _tableView = [[UITableView alloc]initWithFrame:CGRectMake(0, 0 , Screen_Width, Screen_Height - ZK_TopHeight-ZK_TabBarHeight)];
-        
-//        _tableView = [[ZKTableViewProtocol alloc]init];
-        _tableView.delegate = self;
-        _tableView.dataSource = self;
-        _tableView.showsVerticalScrollIndicator = NO;
-        _tableView.backgroundColor = [UIColor whiteColor];
-        UIView * headView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, 0, 10)];
-        headView.backgroundColor = [UIColor groupTableViewBackgroundColor];
-        _tableView.tableHeaderView = headView;
-        _tableView.tableFooterView = [[UIView alloc]initWithFrame:CGRectZero];
-        _tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
-        _tableView.estimatedRowHeight = 0;
-        _tableView.estimatedSectionHeaderHeight = 0;
-        _tableView.estimatedSectionFooterHeight = 0;
-        
-        if (@available(iOS 11.0, *)) {
-            _tableView.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentNever;
-        } else {
-            self.automaticallyAdjustsScrollViewInsets = NO;
-        }
-        
-        MJRefreshNormalHeader *header = [MJRefreshNormalHeader headerWithRefreshingTarget:self refreshingAction:@selector(refreshData)];
-        _tableView.mj_header = header;
-        
-        MJRefreshBackGifFooter *footer = [MJRefreshBackGifFooter footerWithRefreshingTarget:self refreshingAction:@selector(footRefresh)];
-        _tableView.mj_footer =  footer;
-        _tableView.zh_reloadAnimationType =  arc4random() % (10 - 0 + 1) + 0;
-        [self.view addSubview:_tableView];
-    }
+        self->pageIndex += 1;
+        //    _tableView.zh_reloadAnimationType =  arc4random() % (10 - 0 + 1) + 0;
+        [weakSelf requestJokeData];
+        [weakSelf.tableView.mj_header endRefreshing];
+        [weakSelf.tableView.mj_footer endRefreshing];
+    }];
     
-    return _tableView;
+    self.tableView.zh_reloadAnimationType =  arc4random() % (10 - 0 + 1) + 0;
+    [self.view addSubview:self.tableView];
+    
+    self.navigationItem.rightBarButtonItem = [UIBarButtonItem itemWithImageName:@"zk_dz_select_normal" highImageName:@"zk_dz_select_height" target:self action:@selector(clickSelectAction)];
 }
 
 #pragma mark - 点击了右上角筛选按钮
@@ -105,7 +86,7 @@
 
 - (void)selectIndexPathRow:(NSInteger)index{
     
-    _tableView.zh_reloadAnimationType =  arc4random() % (10 - 0 + 1) + 0;
+    self.tableView.zh_reloadAnimationType =  arc4random() % (10 - 0 + 1) + 0;
     selectIndex = index;
     [self requestJokeData];
 }
@@ -114,7 +95,7 @@
 - (void)refreshData{
     
     pageIndex = 1;
-    _tableView.zh_reloadAnimationType =  arc4random() % (10 - 0 + 1) + 0;
+    self.tableView.zh_reloadAnimationType =  arc4random() % (10 - 0 + 1) + 0;
     [self requestJokeData];
     [self.tableView.mj_header endRefreshing];
     [self.tableView.mj_footer endRefreshing];
@@ -153,10 +134,11 @@
         url = randJokeTextUrl;
     }
     
-    
+    WeakSelf;
     [[ZKManager shareManager] requestWithRoutineMethod:RequestMethodGet url:url showLoading:YES param:parms success:^(NSURLSessionDataTask *operation, id responseObject) {
         
         DLog(@"%@",responseObject);
+        
         if ([responseObject[@"error_code"] integerValue] == 0) {
             
             if(self->selectIndex == 0){
@@ -177,22 +159,25 @@
                         [muArray addObjectsFromArray:tempArray];
                         self->jokeArray = muArray;
                         if (tempArray.count<10) {
-                            [self->_tableView.mj_footer endRefreshingWithNoMoreData];
+                            [weakSelf.tableView.mj_footer endRefreshing];
+                            
                         }
                         
                     }else{
                         
-                        [self->_tableView.mj_footer endRefreshingWithNoMoreData];
+                        [weakSelf.tableView.mj_footer endRefreshingWithNoMoreData];
                     }
                 }
-                
                 
             }else{
                 
                 self->jokeArray = responseObject[@"result"];
             }
             
-            [self->_tableView reloadData];
+            dispatch_async(dispatch_get_main_queue(), ^{
+                
+               [weakSelf.tableView reloadData];
+            });
             
         }
         

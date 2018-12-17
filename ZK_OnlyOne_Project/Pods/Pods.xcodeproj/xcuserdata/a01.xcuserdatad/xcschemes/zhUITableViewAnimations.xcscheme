@@ -14,7 +14,7 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "993760334F1EAF58F031C82B605E0425"
+               BlueprintIdentifier = "181CB9B129C75F29A35F46431295C42C"
                BlueprintName = "zhUITableViewAnimations"
                ReferencedContainer = "container:Pods.xcodeproj"
                BuildableName = "libzhUITableViewAnimations.a">

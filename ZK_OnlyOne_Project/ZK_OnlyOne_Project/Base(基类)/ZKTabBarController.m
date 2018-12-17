@@ -12,7 +12,7 @@
 #import "ZKDuanZiViewController.h"
 #import "ZKVideoViewController.h"
 #import "ZKToolViewController.h"
-@interface ZKTabBarController ()
+@interface ZKTabBarController ()<UITabBarControllerDelegate>
 
 @end
 
@@ -21,6 +21,7 @@
 + (instancetype)tabbar
 {
     ZKTabBarController *tab = [[ZKTabBarController alloc] initWithControllers];
+    
     return tab;
 }
 

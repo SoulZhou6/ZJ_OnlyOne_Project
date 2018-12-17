@@ -22,6 +22,10 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic) CGFloat top;
 @property (nonatomic) CGFloat bottom;
 
+
+@property (nonatomic, assign) CGFloat max_X;
+@property (nonatomic, assign) CGFloat max_Y;
+
 /**
  * Shortcut for frame.origin.x.
  *

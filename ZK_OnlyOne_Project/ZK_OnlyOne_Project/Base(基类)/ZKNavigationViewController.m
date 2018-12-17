@@ -9,28 +9,104 @@
 #import "ZKNavigationViewController.h"
 #import "NSObject+Extension.h"
 
-@interface ZKNavigationViewController ()
+@interface ZKNavigationViewController ()<UINavigationControllerDelegate>
 @end
 
 @implementation ZKNavigationViewController
 
+#pragma mark - Life cycle
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    // navi背景图片主题管理
-    [self.navigationBar setBackgroundImage:[[UIImage imageNamed:@"bannerB"] resizableImageWithCapInsets:UIEdgeInsetsZero resizingMode:UIImageResizingModeStretch] forBarMetrics:UIBarMetricsDefault];
-    [self.navigationBar addToThemeImagePoolWithSelector:@selector(setBackgroundImage:forBarMetrics:) objects:@[ZK_THEME_IMAGE ,@(UIBarMetricsDefault)]];
+    [self initNavigationBar];
+}
+
+/**
+ 统一设置导航栏状态栏为黑色
+ */
+- (UIStatusBarStyle)preferredStatusBarStyle {
     
-    self.edgesForExtendedLayout = UIRectEdgeNone;
+    return  UIStatusBarStyleDefault;
+}
+
+- (void)initNavigationBar {
     
-    self.navigationController.navigationBar.hidden = NO;
-    CGFloat height = KIsiPhoneX?88:64;
-    [self.navigationController.navigationBar setBackgroundImage:[UIImage imageWithFrame:CGRectMake(0, 0, Screen_Width, height) color:[UIColor orangeColor] alpha:1.0] forBarMetrics:UIBarMetricsDefault];
+    //设置导航栏下不自动下拉
+    self.navigationController.automaticallyAdjustsScrollViewInsets = NO;
     
+    //禁用系统的导航侧滑返回手势,解除冲突
+    self.interactivePopGestureRecognizer.enabled = NO;
     
-    self.navigationController.navigationBar.translucent = NO;
-    self.navigationController.interactivePopGestureRecognizer.enabled = NO;
-   
+    //设置导航栏两侧字体颜色
+    [[UINavigationBar appearance] setBarTintColor:[UIColor whiteColor]];
+    
+    //设置全屏返回手势的代理
+    
+    id target = self.interactivePopGestureRecognizer.delegate;
+    
+    //添加全屏滑动返回手势
+    SEL backGestureSelector = NSSelectorFromString(@"handleNavigationTransition:");
+    
+    self.pan = [[UIPanGestureRecognizer alloc] initWithTarget:target action:backGestureSelector];
+    [self.view addGestureRecognizer:self.pan];
+    
+    self.delegate = self;
+}
+
+
+/**
+ 设置导航栏样式
+ */
++ (void)load {
+    
+    NSArray *array = [NSArray arrayWithObjects:[self class], nil]; //iOS9.0后使用
+    UINavigationBar *navBar = [UINavigationBar appearanceWhenContainedInInstancesOfClasses:array];
+    NSMutableDictionary *attribute = [NSMutableDictionary dictionary];
+    attribute[NSForegroundColorAttributeName] = [UIColor colorDarkTextColor];
+    attribute[NSFontAttributeName] = BOLD_FONT(17);
+    navBar.titleTextAttributes = attribute;
+    UIImage *backgroundImage = [UIImage imageWithColor:[UIColor colorWhiteColor]];
+    [navBar setBackgroundImage:backgroundImage forBarMetrics:UIBarMetricsDefault];
+}
+
+
+#pragma mark - <UINavigationControllerDelegate>
+
+- (void)pushViewController:(UIViewController *)viewController animated:(BOOL)animated {
+    
+    if (self.viewControllers.count > 0) { //非根控制器才能全屏滑动返回
+        self.pan.enabled = YES;
+        
+        // 设置统一返回的按钮样式
+        UIBarButtonItem *backItem = [UIBarButtonItem itemWithImage:@"zk_icon_return" highlightImg:@"zk_icon_return" target:self action:@selector(pop)];
+        viewController.navigationItem.leftBarButtonItem = backItem;
+        //非根控制器隐藏TabBar
+        viewController.hidesBottomBarWhenPushed = YES;
+    }else {
+        //手势不可用
+        self.pan.enabled = NO;
+    }
+    
+    //正式跳转
+    [super pushViewController:viewController animated:animated];
+    
+    if (@available(iOS 11.0, *)){
+        // 修改tabBar的frame
+        CGRect frame = self.tabBarController.tabBar.frame;
+        frame.origin.y = [UIScreen mainScreen].bounds.size.height - frame.size.height;
+        self.tabBarController.tabBar.frame = frame;
+    }
+}
+
+/**
+ 返回&出栈
+ */
+- (void)pop {
+    [self.view endEditing:YES];
+    [[UIApplication sharedApplication].keyWindow endEditing:YES];
+    
+    [self popViewControllerAnimated:YES];
 }
 
 

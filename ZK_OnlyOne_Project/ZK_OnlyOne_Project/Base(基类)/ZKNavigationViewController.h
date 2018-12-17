@@ -11,7 +11,10 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @interface ZKNavigationViewController : UINavigationController
-
+/**
+ 全屏滑动返回手势
+ */
+@property (nonatomic, strong) UIPanGestureRecognizer *pan;
 @end
 
 NS_ASSUME_NONNULL_END
