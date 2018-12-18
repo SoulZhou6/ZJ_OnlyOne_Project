@@ -11,4 +11,9 @@ target:ZK_OnlyOne_Project do
     pod 'WSProgressHUD'
     pod 'MJExtension'
     pod 'zhUITableViewAnimations'
+    pod 'ZFPlayer'
+    pod 'ZFPlayer/ControlView'
+    pod 'ZFPlayer/AVPlayer'
+    pod 'ZFPlayer/KSYMediaPlayer'
+  
 end

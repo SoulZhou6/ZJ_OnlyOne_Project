@@ -27,7 +27,7 @@
 #import "NSObject+Extension.h"
 #import "ZKDataEncrypt.h"
 #import "UIBarButtonItem+Extension.h"
-
+#import "NSString+Extension.h"
 
 #define WeakSelf    __weak typeof(self) weakSelf = self
 

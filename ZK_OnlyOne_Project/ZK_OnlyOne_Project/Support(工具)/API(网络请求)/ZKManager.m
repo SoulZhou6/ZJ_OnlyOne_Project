@@ -440,6 +440,9 @@ static id _manager;
                                                          @"application/json;charset=utf-8", nil];
     manager.requestSerializer.timeoutInterval = 30.0f;
     
+    [manager.requestSerializer setValue:@"application/x-www-form-urlencoded" forHTTPHeaderField:@"Content-Type"];
+    [manager.responseSerializer setAcceptableContentTypes:[NSSet setWithObjects:@"application/json", @"text/html", @"text/json", @"text/javascript", @"application/x-javascript", nil]];
+    
     if (method == RequestMethodPost) {
         [manager POST:urlStr parameters:param progress:^(NSProgress * _Nonnull uploadProgress)
          {

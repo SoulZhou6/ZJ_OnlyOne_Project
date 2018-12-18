@@ -36,6 +36,15 @@
 		2F1B688D21C233570082920D /* ZKHomeCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2F1B688B21C233570082920D /* ZKHomeCell.xib */; };
 		2F1B689121C239EC0082920D /* ZKHomeObj.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F1B689021C239EC0082920D /* ZKHomeObj.m */; };
 		2F1B689521C243E20082920D /* ZKDataEncrypt.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F1B689421C243E20082920D /* ZKDataEncrypt.m */; };
+		2F2AD8DA21C8EEB400F5B8A7 /* ZKVideoTableViewProtocol.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F2AD8D921C8EEB400F5B8A7 /* ZKVideoTableViewProtocol.m */; };
+		2F2AD8DE21C8EFEE00F5B8A7 /* ZKVideoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F2AD8DD21C8EFEE00F5B8A7 /* ZKVideoCell.m */; };
+		2F2AD8E221C8F02D00F5B8A7 /* ZKVideoObj.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F2AD8E121C8F02D00F5B8A7 /* ZKVideoObj.m */; };
+		2F2AD8E621C8F66200F5B8A7 /* ZKTableViewCellLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F2AD8E521C8F66200F5B8A7 /* ZKTableViewCellLayout.m */; };
+		2F2AD8E921C8F73C00F5B8A7 /* NSString+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F2AD8E821C8F73C00F5B8A7 /* NSString+Extension.m */; };
+		2F2AD8F021C8FD6B00F5B8A7 /* libstdc++.6.0.9.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F2AD8ED21C8FD6B00F5B8A7 /* libstdc++.6.0.9.tbd */; };
+		2F2AD8F121C8FD6B00F5B8A7 /* libstdc++.6.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F2AD8EE21C8FD6B00F5B8A7 /* libstdc++.6.tbd */; };
+		2F2AD8F221C8FD6B00F5B8A7 /* libstdc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F2AD8EF21C8FD6B00F5B8A7 /* libstdc++.tbd */; };
+		2F2AD8F421C8FE3A00F5B8A7 /* data.json in Resources */ = {isa = PBXBuildFile; fileRef = 2F2AD8F321C8FE3A00F5B8A7 /* data.json */; };
 		2F2FA14521C39D4000A343DF /* ZKBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F2FA14421C39D4000A343DF /* ZKBaseViewController.m */; };
 		2FB342AE21C625B50027D654 /* UIBarButtonItem+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FB342AD21C625B50027D654 /* UIBarButtonItem+Extension.m */; };
 		2FB342B321C6289E0027D654 /* ZKDuanziCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FB342B121C6289E0027D654 /* ZKDuanziCell.m */; };
@@ -105,6 +114,21 @@
 		2F1B689021C239EC0082920D /* ZKHomeObj.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZKHomeObj.m; sourceTree = "<group>"; };
 		2F1B689321C243E20082920D /* ZKDataEncrypt.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZKDataEncrypt.h; sourceTree = "<group>"; };
 		2F1B689421C243E20082920D /* ZKDataEncrypt.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZKDataEncrypt.m; sourceTree = "<group>"; };
+		2F2AD8D821C8EEB400F5B8A7 /* ZKVideoTableViewProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZKVideoTableViewProtocol.h; sourceTree = "<group>"; };
+		2F2AD8D921C8EEB400F5B8A7 /* ZKVideoTableViewProtocol.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZKVideoTableViewProtocol.m; sourceTree = "<group>"; };
+		2F2AD8DC21C8EFEE00F5B8A7 /* ZKVideoCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZKVideoCell.h; sourceTree = "<group>"; };
+		2F2AD8DD21C8EFEE00F5B8A7 /* ZKVideoCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZKVideoCell.m; sourceTree = "<group>"; };
+		2F2AD8E021C8F02D00F5B8A7 /* ZKVideoObj.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZKVideoObj.h; sourceTree = "<group>"; };
+		2F2AD8E121C8F02D00F5B8A7 /* ZKVideoObj.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZKVideoObj.m; sourceTree = "<group>"; };
+		2F2AD8E421C8F66200F5B8A7 /* ZKTableViewCellLayout.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZKTableViewCellLayout.h; sourceTree = "<group>"; };
+		2F2AD8E521C8F66200F5B8A7 /* ZKTableViewCellLayout.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZKTableViewCellLayout.m; sourceTree = "<group>"; };
+		2F2AD8E721C8F73C00F5B8A7 /* NSString+Extension.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSString+Extension.h"; sourceTree = "<group>"; };
+		2F2AD8E821C8F73C00F5B8A7 /* NSString+Extension.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSString+Extension.m"; sourceTree = "<group>"; };
+		2F2AD8EA21C8FD3D00F5B8A7 /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
+		2F2AD8ED21C8FD6B00F5B8A7 /* libstdc++.6.0.9.tbd */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = "sourcecode.text-based-dylib-definition"; path = "libstdc++.6.0.9.tbd"; sourceTree = "<group>"; };
+		2F2AD8EE21C8FD6B00F5B8A7 /* libstdc++.6.tbd */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = "sourcecode.text-based-dylib-definition"; path = "libstdc++.6.tbd"; sourceTree = "<group>"; };
+		2F2AD8EF21C8FD6B00F5B8A7 /* libstdc++.tbd */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = "sourcecode.text-based-dylib-definition"; path = "libstdc++.tbd"; sourceTree = "<group>"; };
+		2F2AD8F321C8FE3A00F5B8A7 /* data.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = data.json; sourceTree = "<group>"; };
 		2F2FA14321C39D4000A343DF /* ZKBaseViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZKBaseViewController.h; sourceTree = "<group>"; };
 		2F2FA14421C39D4000A343DF /* ZKBaseViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZKBaseViewController.m; sourceTree = "<group>"; };
 		2FB342AC21C625B50027D654 /* UIBarButtonItem+Extension.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIBarButtonItem+Extension.h"; sourceTree = "<group>"; };
@@ -135,6 +159,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2F2AD8F021C8FD6B00F5B8A7 /* libstdc++.6.0.9.tbd in Frameworks */,
+				2F2AD8F221C8FD6B00F5B8A7 /* libstdc++.tbd in Frameworks */,
+				2F2AD8F121C8FD6B00F5B8A7 /* libstdc++.6.tbd in Frameworks */,
 				60F939F0B7E0C06DE5608961 /* libPods-ZK_OnlyOne_Project.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -201,6 +228,7 @@
 		2F1B684021BF93380082920D /* Resource(资源) */ = {
 			isa = PBXGroup;
 			children = (
+				2F2AD8EC21C8FD6B00F5B8A7 /* libsted++ */,
 				2F1B682B21BF92770082920D /* Main.storyboard */,
 				2F1B683121BF92790082920D /* Assets.xcassets */,
 				2F1B686721BFB7820082920D /* Images.xcassets */,
@@ -239,6 +267,8 @@
 				2F1B686A21C0E34E0082920D /* NSObject+Extension.m */,
 				2FB342AC21C625B50027D654 /* UIBarButtonItem+Extension.h */,
 				2FB342AD21C625B50027D654 /* UIBarButtonItem+Extension.m */,
+				2F2AD8E721C8F73C00F5B8A7 /* NSString+Extension.h */,
+				2F2AD8E821C8F73C00F5B8A7 /* NSString+Extension.m */,
 			);
 			path = "Category(控件分类)";
 			sourceTree = "<group>";
@@ -332,6 +362,10 @@
 		2F1B687E21C207190082920D /* Video */ = {
 			isa = PBXGroup;
 			children = (
+				2F2AD8E321C8F64600F5B8A7 /* Other */,
+				2F2AD8DF21C8F01900F5B8A7 /* Model */,
+				2F2AD8DB21C8EFBF00F5B8A7 /* View */,
+				2F2AD8D721C8EE8E00F5B8A7 /* ViewModel */,
 				2F1B687F21C207200082920D /* Controller */,
 			);
 			path = Video;
@@ -391,6 +425,53 @@
 			path = "数据处理";
 			sourceTree = "<group>";
 		};
+		2F2AD8D721C8EE8E00F5B8A7 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				2F2AD8D821C8EEB400F5B8A7 /* ZKVideoTableViewProtocol.h */,
+				2F2AD8D921C8EEB400F5B8A7 /* ZKVideoTableViewProtocol.m */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		2F2AD8DB21C8EFBF00F5B8A7 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				2F2AD8DC21C8EFEE00F5B8A7 /* ZKVideoCell.h */,
+				2F2AD8DD21C8EFEE00F5B8A7 /* ZKVideoCell.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		2F2AD8DF21C8F01900F5B8A7 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				2F2AD8E021C8F02D00F5B8A7 /* ZKVideoObj.h */,
+				2F2AD8E121C8F02D00F5B8A7 /* ZKVideoObj.m */,
+				2F2AD8F321C8FE3A00F5B8A7 /* data.json */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		2F2AD8E321C8F64600F5B8A7 /* Other */ = {
+			isa = PBXGroup;
+			children = (
+				2F2AD8E421C8F66200F5B8A7 /* ZKTableViewCellLayout.h */,
+				2F2AD8E521C8F66200F5B8A7 /* ZKTableViewCellLayout.m */,
+			);
+			path = Other;
+			sourceTree = "<group>";
+		};
+		2F2AD8EC21C8FD6B00F5B8A7 /* libsted++ */ = {
+			isa = PBXGroup;
+			children = (
+				2F2AD8ED21C8FD6B00F5B8A7 /* libstdc++.6.0.9.tbd */,
+				2F2AD8EE21C8FD6B00F5B8A7 /* libstdc++.6.tbd */,
+				2F2AD8EF21C8FD6B00F5B8A7 /* libstdc++.tbd */,
+			);
+			path = "libsted++";
+			sourceTree = "<group>";
+		};
 		2FB342AF21C628570027D654 /* View */ = {
 			isa = PBXGroup;
 			children = (
@@ -427,6 +508,7 @@
 		55D8B91206407B23CFF96316 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				2F2AD8EA21C8FD3D00F5B8A7 /* libc++.tbd */,
 				5AFD847F7E9499311346F4F5 /* libPods-ZK_OnlyOne_Project.a */,
 			);
 			name = Frameworks;
@@ -503,6 +585,7 @@
 				2F1B688D21C233570082920D /* ZKHomeCell.xib in Resources */,
 				2F1B683521BF92790082920D /* LaunchScreen.storyboard in Resources */,
 				2F1B686821BFB7820082920D /* Images.xcassets in Resources */,
+				2F2AD8F421C8FE3A00F5B8A7 /* data.json in Resources */,
 				2FB342B421C6289E0027D654 /* ZKDuanziCell.xib in Resources */,
 				2F1B683221BF92790082920D /* Assets.xcassets in Resources */,
 				2FB342C521C646850027D654 /* LCArrowCellTableViewCell.xib in Resources */,
@@ -522,11 +605,13 @@
 				"${SRCROOT}/Pods/Target Support Files/Pods-ZK_OnlyOne_Project/Pods-ZK_OnlyOne_Project-resources.sh",
 				"${PODS_ROOT}/MJRefresh/MJRefresh/MJRefresh.bundle",
 				"${PODS_ROOT}/WSProgressHUD/WSProgressHUD/WSProgressBundle.bundle",
+				"${PODS_ROOT}/ZFPlayer/ZFPlayer/Classes/ControlView/ZFPlayer.bundle",
 			);
 			name = "[CP] Copy Pods Resources";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/MJRefresh.bundle",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/WSProgressBundle.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/ZFPlayer.bundle",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -562,7 +647,9 @@
 				2FB342C721C646850027D654 /* LCArrowTableView.m in Sources */,
 				2F1B685521BF966B0082920D /* UITextView+Extension.m in Sources */,
 				2F1B687821C1FC3A0082920D /* ZKTableViewProtocol.m in Sources */,
+				2F2AD8DE21C8EFEE00F5B8A7 /* ZKVideoCell.m in Sources */,
 				2F2FA14521C39D4000A343DF /* ZKBaseViewController.m in Sources */,
+				2F2AD8E221C8F02D00F5B8A7 /* ZKVideoObj.m in Sources */,
 				2F1B685C21BF97F40082920D /* ZKEmptyView.m in Sources */,
 				2FB342C621C646850027D654 /* LCArrowView.m in Sources */,
 				2F1B684F21BF95D20082920D /* UIImage+Extension.m in Sources */,
@@ -570,6 +657,7 @@
 				2F1B686521BF9DFB0082920D /* ZKHomeViewController.m in Sources */,
 				2F1B686B21C0E34F0082920D /* NSObject+Extension.m in Sources */,
 				2FB342C421C646850027D654 /* LCArrowCellTableViewCell.m in Sources */,
+				2F2AD8E621C8F66200F5B8A7 /* ZKTableViewCellLayout.m in Sources */,
 				2FB342B321C6289E0027D654 /* ZKDuanziCell.m in Sources */,
 				2F1B684921BF94B20082920D /* UIColor+Extension.m in Sources */,
 				2FB342AE21C625B50027D654 /* UIBarButtonItem+Extension.m in Sources */,
@@ -580,8 +668,10 @@
 				2F1B685921BF974C0082920D /* ZKButton.m in Sources */,
 				2F1B686E21C0E5630082920D /* ZKNavigationViewController.m in Sources */,
 				2F1B686021BF9BD70082920D /* ZKConstant.m in Sources */,
+				2F2AD8E921C8F73C00F5B8A7 /* NSString+Extension.m in Sources */,
 				2F1B684621BF93770082920D /* ZKManager.m in Sources */,
 				2F1B688721C207610082920D /* ZKToolViewController.m in Sources */,
+				2F2AD8DA21C8EEB400F5B8A7 /* ZKVideoTableViewProtocol.m in Sources */,
 				2F1B685221BF963C0082920D /* UILabel+Extension.m in Sources */,
 				2FE5E09D21C7559A00C00F24 /* ZKWebBrowseViewController.m in Sources */,
 				2F1B683021BF92770082920D /* ZK_OnlyOne_Project.xcdatamodeld in Sources */,
@@ -756,6 +846,10 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/ZK_OnlyOne_Project/Resource(资源)/libsted++",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.Geek.ZKOnlyOne;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -790,6 +884,10 @@
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
+				);
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/ZK_OnlyOne_Project/Resource(资源)/libsted++",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.Geek.ZKOnlyOne;
 				PRODUCT_NAME = "$(TARGET_NAME)";
