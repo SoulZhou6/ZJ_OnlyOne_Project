@@ -30,6 +30,9 @@ extern NSString * const randJokeTextUrl;
 
 /**笑话----AppKey*/
 extern NSString * const jokeAppKey;
+
+/**天气查询接口*/
+extern NSString * const weatherUrl;
 @end
 
 NS_ASSUME_NONNULL_END

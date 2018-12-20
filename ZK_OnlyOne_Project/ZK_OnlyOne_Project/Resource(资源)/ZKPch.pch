@@ -28,6 +28,9 @@
 #import "ZKDataEncrypt.h"
 #import "UIBarButtonItem+Extension.h"
 #import "NSString+Extension.h"
+#import <GKMessageTool/GKMessageTool.h>
+#import <GKNavigationBarViewController/GKNavigationBarViewController.h>
+#import <SDWebImage/UIImageView+WebCache.h>
 
 #define WeakSelf    __weak typeof(self) weakSelf = self
 
@@ -40,6 +43,22 @@
 #define ZK_TabBarHeight ([[UIApplication sharedApplication] statusBarFrame].size.height>20?83:49) //底部tabbar高度
 #define ZK_TopHeight (ZK_StatusBarHeight + ZK_NavBarHeight) //整个导航栏高度
 
+
+// 适配比例
+#define ADAPTATIONRATIO     Screen_Width / 750.0f
+
+// 判断是否是iPhone X系列
+#define IS_iPhoneX      ([UIScreen instancesRespondToSelector:@selector(currentMode)] ?\
+(\
+CGSizeEqualToSize(CGSizeMake(375, 812),[UIScreen mainScreen].bounds.size)\
+||\
+CGSizeEqualToSize(CGSizeMake(812, 375),[UIScreen mainScreen].bounds.size)\
+||\
+CGSizeEqualToSize(CGSizeMake(414, 896),[UIScreen mainScreen].bounds.size)\
+||\
+CGSizeEqualToSize(CGSizeMake(896, 414),[UIScreen mainScreen].bounds.size))\
+:\
+NO)
 
 //判断是不是iphonex
 #define KIsiPhoneX ([UIScreen instancesRespondToSelector:@selector(currentMode)] ? CGSizeEqualToSize(CGSizeMake(1125, 2436), [[UIScreen mainScreen] currentMode].size) : NO)
@@ -60,5 +79,40 @@
 //带有RGBA的颜色设置
 #define RGBA(R, G, B, A) [UIColor colorWithRed:R/255.0 green:G/255.0 blue:B/255.0 alpha:A]
 #define RGB(r,g,b) [UIColor colorWithRed:r/255.0f green:g/255.0f blue:b/255.0f alpha:1.0f]
+
+#define DefaultImage [UIImage imageNamed:@"zk_default"]
+
+// 来自YYKit
+#ifndef weakify
+#if DEBUG
+#if __has_feature(objc_arc)
+#define weakify(object) autoreleasepool{} __weak __typeof__(object) weak##_##object = object;
+#else
+#define weakify(object) autoreleasepool{} __block __typeof__(object) block##_##object = object;
+#endif
+#else
+#if __has_feature(objc_arc)
+#define weakify(object) try{} @finally{} {} __weak __typeof__(object) weak##_##object = object;
+#else
+#define weakify(object) try{} @finally{} {} __block __typeof__(object) block##_##object = object;
+#endif
+#endif
+#endif
+
+#ifndef strongify
+#if DEBUG
+#if __has_feature(objc_arc)
+#define strongify(object) autoreleasepool{} __typeof__(object) object = weak##_##object;
+#else
+#define strongify(object) autoreleasepool{} __typeof__(object) object = block##_##object;
+#endif
+#else
+#if __has_feature(objc_arc)
+#define strongify(object) try{} @finally{} __typeof__(object) object = weak##_##object;
+#else
+#define strongify(object) try{} @finally{} __typeof__(object) object = block##_##object;
+#endif
+#endif
+#endif
 
 #endif /* ZKPch_pch */

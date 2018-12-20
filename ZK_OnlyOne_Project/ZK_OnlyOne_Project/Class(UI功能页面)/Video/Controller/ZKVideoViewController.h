@@ -6,11 +6,11 @@
 //  Copyright © 2018 极客_艾欧尼亚. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import <GKNavigationBarViewController/GKNavigationBarViewController.h>
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface ZKVideoViewController : UIViewController
+@interface ZKVideoViewController : GKNavigationBarViewController
 
 @end
 

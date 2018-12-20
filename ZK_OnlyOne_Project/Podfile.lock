@@ -14,64 +14,74 @@ PODS:
   - AFNetworking/Serialization (3.2.1)
   - AFNetworking/UIKit (3.2.1):
     - AFNetworking/NSURLSession
-  - KSYMediaPlayer_iOS/KSYMediaPlayer_vod (3.0.3)
+  - FLAnimatedImage (1.0.12)
+  - GKMessageTool (1.0.4):
+    - MBProgressHUD
+  - GKNavigationBarViewController (2.1.4)
   - Masonry (1.1.0)
+  - MBProgressHUD (1.1.0)
   - MJExtension (3.0.15.1)
   - MJRefresh (3.1.15.7)
+  - SDWebImage (4.4.2):
+    - SDWebImage/Core (= 4.4.2)
+  - SDWebImage/Core (4.4.2)
+  - SDWebImage/GIF (4.4.2):
+    - FLAnimatedImage (~> 1.0)
+    - SDWebImage/Core
   - Shimmer (1.0.2)
+  - TXLiteAVSDK_Player (5.3.6004)
   - WSProgressHUD (1.1.3):
     - Shimmer
   - YYModel (1.0.4)
-  - ZFPlayer (3.2.2):
-    - ZFPlayer/Core (= 3.2.2)
-  - ZFPlayer/AVPlayer (3.2.2):
-    - ZFPlayer/Core
-  - ZFPlayer/ControlView (3.2.2):
-    - ZFPlayer/Core
-  - ZFPlayer/Core (3.2.2)
-  - ZFPlayer/KSYMediaPlayer (3.2.2):
-    - KSYMediaPlayer_iOS/KSYMediaPlayer_vod
-    - ZFPlayer/Core
   - zhUITableViewAnimations (0.1.0)
 
 DEPENDENCIES:
   - AFNetworking
+  - GKMessageTool
+  - GKNavigationBarViewController
   - Masonry
   - MJExtension
   - MJRefresh
+  - SDWebImage
+  - SDWebImage/GIF
+  - TXLiteAVSDK_Player
   - WSProgressHUD
   - YYModel
-  - ZFPlayer
-  - ZFPlayer/AVPlayer
-  - ZFPlayer/ControlView
-  - ZFPlayer/KSYMediaPlayer
   - zhUITableViewAnimations
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - AFNetworking
-    - KSYMediaPlayer_iOS
+    - FLAnimatedImage
+    - GKMessageTool
+    - GKNavigationBarViewController
     - Masonry
+    - MBProgressHUD
     - MJExtension
     - MJRefresh
+    - SDWebImage
     - Shimmer
+    - TXLiteAVSDK_Player
     - WSProgressHUD
     - YYModel
-    - ZFPlayer
     - zhUITableViewAnimations
 
 SPEC CHECKSUMS:
   AFNetworking: b6f891fdfaed196b46c7a83cf209e09697b94057
-  KSYMediaPlayer_iOS: bd163c277487e99df58941f10f090af2fb53fd6d
+  FLAnimatedImage: 4a0b56255d9b05f18b6dd7ee06871be5d3b89e31
+  GKMessageTool: c5730c895e061d5f8ad69ffc4c19e688ceb4d5f9
+  GKNavigationBarViewController: 2e113052e7d0ec8076a11f1fa0e4d23d4c4af345
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
+  MBProgressHUD: e7baa36a220447d8aeb12769bf0585582f3866d9
   MJExtension: 19bc33ce2eee2d319760f5622562cf581a6ff756
   MJRefresh: 697f8ec75ebdbe9207767bb682cf0f51b0d8a41f
+  SDWebImage: 624d6e296c69b244bcede364c72ae0430ac14681
   Shimmer: c5374be1c2b0c9e292fb05b339a513cf291cac86
+  TXLiteAVSDK_Player: 0ae5dbfa79619f53265d88cc990b1baf7abe1d97
   WSProgressHUD: a0902809c8af112fb34b004fdc75c16eb85167a3
   YYModel: 2a7fdd96aaa4b86a824e26d0c517de8928c04b30
-  ZFPlayer: 8547effaab9e2764c2e9f72ecf32530d6bd96165
   zhUITableViewAnimations: 6ff53477cd4adec96384c12ebd5008748a3edf3a
 
-PODFILE CHECKSUM: e0dc157b06f00bbea72e3c483a3d827fb03bc108
+PODFILE CHECKSUM: 04a9f26c10360a5d7cbbe1ebce0d4637c455dd8c
 
 COCOAPODS: 1.5.3

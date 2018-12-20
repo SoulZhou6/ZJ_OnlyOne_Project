@@ -23,6 +23,9 @@
     self.window.backgroundColor = [UIColor whiteColor];
     self.window.rootViewController = [ZKTabBarController tabbar];
     [self.window makeKeyAndVisible];
+    
+    [[UINavigationBar appearance]  setBackgroundImage:[[UIImage alloc] init] forBarPosition:UIBarPositionAny barMetrics:UIBarMetricsDefault];
+    [[UINavigationBar appearance] setShadowImage:[[UIImage alloc] init]];
     return YES;
 }
 

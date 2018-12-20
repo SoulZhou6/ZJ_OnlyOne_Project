@@ -32,9 +32,9 @@
     switch (index) {
         case 0:
             self.contentOne.text = model.title;
-            [self.oneImgOne setImageWithURL:[NSURL URLWithString:model.thumbnail_pic_s]];
-            [self.oneImgTwo setImageWithURL:[NSURL URLWithString:model.thumbnail_pic_s02]];
-            [self.oneImgThree setImageWithURL:[NSURL URLWithString:model.thumbnail_pic_s03]];
+            [self.oneImgOne setImageWithURL:[NSURL URLWithString:model.thumbnail_pic_s] placeholderImage:DefaultImage];
+            [self.oneImgTwo setImageWithURL:[NSURL URLWithString:model.thumbnail_pic_s02] placeholderImage:DefaultImage];
+            [self.oneImgThree setImageWithURL:[NSURL URLWithString:model.thumbnail_pic_s03] placeholderImage:DefaultImage];
             self.sourceOne.text = [NSString stringWithFormat:@"数据来源: %@     发布时间: %@",model.author_name,model.date];
             
             break;
@@ -42,7 +42,7 @@
             
             self.contentTwo.text = model.title;
             [self.contentTwo sizeToFit];
-            [self.TwoImage setImageWithURL:[NSURL URLWithString:model.thumbnail_pic_s]];
+            [self.TwoImage setImageWithURL:[NSURL URLWithString:model.thumbnail_pic_s] placeholderImage:DefaultImage];
            self.sourceTwo.text = [NSString stringWithFormat:@"数据来源: %@     发布时间: %@",model.author_name,model.date];
             break;
         case 2:

@@ -29,4 +29,7 @@ NSString * const randJokeTextUrl = @"http://v.juhe.cn/joke/randJoke.php";
 
 /**笑话----AppKey*/
 NSString * const jokeAppKey = @"1e9c37d70598e21f56bc2890d36c635e";
+
+/**天气查询接口*/
+NSString * const weatherUrl = @"https://www.apiopen.top/weatherApi";
 @end

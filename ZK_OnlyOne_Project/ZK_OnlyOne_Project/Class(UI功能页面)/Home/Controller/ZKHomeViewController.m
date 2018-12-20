@@ -74,6 +74,7 @@ static NSString *const kNewsCellReuseIdentifier = @"kNewsCellReuseIdentifier";
    
 }
 
+
 - (void)configSubview
 {
     self.categoryId  = @"top"; //默认加载全部
