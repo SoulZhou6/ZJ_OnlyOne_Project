@@ -14,13 +14,16 @@
 @implementation WRNavigationBar
 
 + (BOOL)isIphoneX {
-    
-    if ([UIApplication sharedApplication].statusBarFrame.size.height == 44) {
-        return YES;
+    struct utsname systemInfo;
+    uname(&systemInfo);
+    NSString *platform = [NSString stringWithCString:systemInfo.machine encoding:NSASCIIStringEncoding];
+    if ([platform isEqualToString:@"i386"] || [platform isEqualToString:@"x86_64"]) {
+        // judgment by height when in simulators
+        return (CGSizeEqualToSize([UIScreen mainScreen].bounds.size, CGSizeMake(375, 812)) ||
+                CGSizeEqualToSize([UIScreen mainScreen].bounds.size, CGSizeMake(812, 375)));
     }
-    else {
-        return NO;
-    }
+    BOOL isIPhoneX = [platform isEqualToString:@"iPhone10,3"] || [platform isEqualToString:@"iPhone10,6"];
+    return isIPhoneX;
 }
 + (CGFloat)navBarBottom {
     return [self isIphoneX] ? 88 : 64;
@@ -367,7 +370,7 @@ static char kWRBackgroundImageKey;
     if (newTitleTextAttributes[NSForegroundColorAttributeName] == nil) {
         newTitleTextAttributes[NSForegroundColorAttributeName] = titleColor;
     }
-    [self wr_setTitleTextAttributes:newTitleTextAttributes];
+//    [self wr_setTitleTextAttributes:newTitleTextAttributes];
 }
 
 @end

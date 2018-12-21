@@ -65,7 +65,7 @@ static NSString *kIdentifier = @"kIdentifier";
     }
     
     // 设置左滑push代理
-    self.gk_pushDelegate = self;
+//    self.gk_pushDelegate = self;
 }
 
 - (void)viewDidAppear:(BOOL)animated {

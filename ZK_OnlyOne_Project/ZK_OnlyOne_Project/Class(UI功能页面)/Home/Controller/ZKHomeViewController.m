@@ -99,15 +99,15 @@ static NSString *const kNewsCellReuseIdentifier = @"kNewsCellReuseIdentifier";
     
     WeakSelf;
     self.tableView.mj_header = [MJRefreshGifHeader headerWithRefreshingBlock:^{
-        weakSelf.count = 16;
+         [weakSelf.newsObjects removeAllObjects];
         [weakSelf requestNewsListData];
     }];
     
     self.tableView.mj_footer = [MJRefreshAutoNormalFooter footerWithRefreshingBlock:^{
-        weakSelf.count += 16;
-        if (weakSelf.newsObjects.count) {
-            [weakSelf.newsObjects removeAllObjects];
-        }
+       
+//        if (weakSelf.newsObjects.count) {
+//            [weakSelf.newsObjects removeAllObjects];
+//        }
         [weakSelf requestNewsListData];
     }];
     
@@ -127,7 +127,11 @@ static NSString *const kNewsCellReuseIdentifier = @"kNewsCellReuseIdentifier";
         DLog(@"%@",responseObject);
         
         if([responseObject[@"error_code"] intValue] == 0){
-            weakSelf.newsObjects = [[NSMutableArray alloc]initWithArray:responseObject[@"result"][@"data"]];
+            NSArray * array = [[NSMutableArray alloc]initWithArray:responseObject[@"result"][@"data"]];
+            for (int i=0; i<array.count; i++) {
+                [weakSelf.newsObjects addObject:array[i]];
+            }
+            
             [weakSelf mainQueueRefresh];
         }
         
@@ -326,6 +330,7 @@ static NSString *const kNewsCellReuseIdentifier = @"kNewsCellReuseIdentifier";
 - (void)scroll:(ZKScrollViewMenu *)scroll didSelectItemAtIndex:(NSInteger)index {
     self.scrollIndex = index; //及时改变索引值
     
+    self.navigationItem.title = _titleObjects[index];
     if (self.idsObjects.count == self.titleObjects.count) {
         
         self.categoryId = self.idsObjects[index];
