@@ -11,7 +11,7 @@
 
 
 #define NAVBAR_COLORCHANGE_POINT (IMAGE_HEIGHT - NAV_HEIGHT*2)
-#define IMAGE_HEIGHT 280
+#define IMAGE_HEIGHT 250
 #define NAV_HEIGHT 64
 
 
@@ -35,7 +35,7 @@
     [self.view addSubview:self.tableView];
     self.tableView.tableHeaderView = self.topView;
     [self.view insertSubview:self.customNavBar aboveSubview:self.tableView];
-    
+    [self setupNavBar];
     self.customNavBar.title = @"奥黛丽·赫本";
     [self.customNavBar wr_setBottomLineHidden:YES];
     if (@available(iOS 11.0, *)) {
@@ -45,7 +45,7 @@
     [self.customNavBar wr_setBackgroundAlpha:0];
     [self.customNavBar wr_setLeftButtonWithImage:[UIImage imageNamed:@"back"]];
     
-    [self setupNavBar];
+    
 }
 
 - (void)setupNavBar
@@ -53,8 +53,9 @@
     [self.view addSubview:self.customNavBar];
     
     // 设置自定义导航栏背景图片
-//    self.customNavBar.barBackgroundImage = [UIImage imageNamed:@"zk_tool_headBg"];
-    self.customNavBar.backgroundColor = [UIColor colorWithHexString:@"#1296db"];
+    self.customNavBar.barBackgroundImage = [UIImage imageNamed:@"bannerA"];
+//    [UIImage im];
+//    self.customNavBar.backgroundColor = [UIColor colorWithHexString:@"#1296db"];
     // 设置自定义导航栏标题颜色
     self.customNavBar.titleLabelColor = [UIColor whiteColor];
     
@@ -136,6 +137,7 @@
     if (_topView == nil) {
         _topView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"zk_tool_headBg"]];
         _topView.frame = CGRectMake(0, 0, self.view.frame.size.width, IMAGE_HEIGHT);
+        _topView.contentMode = UIViewContentModeScaleToFill;
     }
     return _topView;
 }

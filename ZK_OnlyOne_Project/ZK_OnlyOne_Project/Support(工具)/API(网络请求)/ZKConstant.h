@@ -25,9 +25,6 @@ extern NSString * const jokeListUrl;
 /**笑话----最新笑话---- 接口地址*/
 extern NSString * const jokeTextUrl;
 
-/**笑话----随机获取笑话---- 接口地址*/
-extern NSString * const randJokeTextUrl;
-
 /**笑话----AppKey*/
 extern NSString * const jokeAppKey;
 

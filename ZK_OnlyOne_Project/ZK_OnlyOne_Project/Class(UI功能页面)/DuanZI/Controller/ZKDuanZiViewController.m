@@ -72,7 +72,7 @@
     
     NSArray * titleArray = [[NSArray alloc]init];
     
-    titleArray = @[@"最新段子",@"随机段子"];
+    titleArray = @[@"最新",@"更新时间"];
     
     
     _popView = [[LCArrowView alloc] initWithFrame:CGRectMake(0, 0, Screen_Width, Screen_Height) Origin:point Width:120 Height:36*titleArray.count Type:Type_UpRight Color:[UIColor colorWithRed:0.2737 green:0.2737 blue:0.2737 alpha:1.0] ];
@@ -149,13 +149,14 @@
 //    }else
     if (selectIndex == 0){
         
-        parms = @{@"key":jokeAppKey,@"page":[NSString stringWithFormat:@"%ld",pageIndex],@"pagesize":@"20"};
+       parms = @{@"key":jokeAppKey,@"page":[NSString stringWithFormat:@"%ld",pageIndex],@"rows":@"20"};
         url = jokeTextUrl;
     }else{
         
         pageIndex = 1;
-        parms = @{@"key":jokeAppKey};
-        url = randJokeTextUrl;
+//        parms = @{@"key":jokeAppKey};
+        url = jokeListUrl;
+        parms = @{@"key":jokeAppKey,@"time":[[ZKDataEncrypt getNowTimeTimestamp3:[ZKDataEncrypt getYesTadayFromTimeTamp]] substringToIndex:10],@"page":[NSString stringWithFormat:@"%ld",pageIndex],@"rows":@"20",@"sort":@"desc"};
     }
     
     WeakSelf;
@@ -169,12 +170,12 @@
                 
                 if (self->pageIndex == 1) {
                     
-                    self->jokeArray = responseObject[@"result"][@"data"];
+                    self->jokeArray = responseObject[@"result"];
                 }else{
                     
                     NSArray * tempArray = [[NSArray alloc]init];
                     
-                    tempArray = responseObject[@"result"][@"data"];
+                    tempArray = responseObject[@"result"];
                     
                     if (tempArray.count!=0) {
                         

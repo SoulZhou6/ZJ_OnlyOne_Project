@@ -20,15 +20,13 @@ NSString * const newsAppKey = @"54c0a6a946620b7e5175e5a86b25bb01";
 
 
 /**笑话----按更新时间查询笑话---- 接口地址*/
-NSString * const jokeListUrl = @"http://v.juhe.cn/joke/content/list.php";
+NSString * const jokeListUrl = @"http://api.avatardata.cn/Joke/QueryJokeByTime";
 /**笑话----最新笑话---- 接口地址*/
-NSString * const jokeTextUrl = @"http://v.juhe.cn/joke/content/text.php";
+NSString * const jokeTextUrl = @"http://api.avatardata.cn/Joke/NewstJoke";
 
-/**笑话----随机获取笑话---- 接口地址*/
-NSString * const randJokeTextUrl = @"http://v.juhe.cn/joke/randJoke.php";
 
 /**笑话----AppKey*/
-NSString * const jokeAppKey = @"1e9c37d70598e21f56bc2890d36c635e";
+NSString * const jokeAppKey = @"89128014354844b08f4ecd9ce27c8041";
 
 /**天气查询接口*/
 NSString * const weatherUrl = @"https://www.apiopen.top/weatherApi";

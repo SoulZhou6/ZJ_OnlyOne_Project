@@ -6,19 +6,14 @@
 //  Copyright © 2018 极客_艾欧尼亚. All rights reserved.
 //
 
-#import "ZKBaseViewController.h"
+#import <UIKit/UIKit.h>
 
 NS_ASSUME_NONNULL_BEGIN
 
-@class ZKHomeObj;
 
-typedef void(^KYWkwebViewControllerBackBlock)(void);
+@interface ZKWebBrowseViewController : UIViewController
 
-@interface ZKWebBrowseViewController : ZKBaseViewController
 
-@property (nonatomic,assign)NSInteger isRead;
-@property (nonatomic,assign)BOOL isMessageBool;
-@property (nonatomic,strong)KYWkwebViewControllerBackBlock wkwebViewControllerBackBlock;
 /**
  加载纯外部链接网页
  
@@ -40,8 +35,7 @@ typedef void(^KYWkwebViewControllerBackBlock)(void);
  @param postData post请求块
  */
 - (void)POSTWebURLSring:(NSString *)string postData:(NSString *)postData;
-/// news model
-@property (nonatomic, strong) ZKHomeObj *model;
+
 @end
 
 NS_ASSUME_NONNULL_END

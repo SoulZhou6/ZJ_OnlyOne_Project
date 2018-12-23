@@ -278,14 +278,13 @@ static NSString *const kNewsCellReuseIdentifier = @"kNewsCellReuseIdentifier";
         ZKHomeObj *model = self.newsObjects[indexPath.row];
         
         ZKWebBrowseViewController *browseVC = [ZKWebBrowseViewController new];
-        browseVC.model       = model;
         [browseVC loadWebURLSring:model.url];
         
-        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.25 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-            
+//        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.25 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        
             
             [self.navigationController pushViewController:browseVC animated:YES];
-        });
+//        });
     }
 }
 

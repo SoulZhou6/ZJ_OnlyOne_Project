@@ -40,6 +40,9 @@ NS_ASSUME_NONNULL_BEGIN
                 limitWidth:(CGFloat)maxWidth;
 
 - (CGSize)textSizeWithFont:(UIFont *)font constrainedToSize:(CGSize)size lineBreakMode:(NSLineBreakMode)lineBreakMode;
+
+
+- (NSArray *)componentsSeparatedFromString:(NSString *)fromString toString:(NSString *)toString;
 @end
 
 NS_ASSUME_NONNULL_END
