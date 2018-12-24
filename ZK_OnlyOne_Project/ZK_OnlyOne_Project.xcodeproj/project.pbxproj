@@ -46,6 +46,18 @@
 		2FB342C521C646850027D654 /* LCArrowCellTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2FB342C021C646850027D654 /* LCArrowCellTableViewCell.xib */; };
 		2FB342C621C646850027D654 /* LCArrowView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FB342C121C646850027D654 /* LCArrowView.m */; };
 		2FB342C721C646850027D654 /* LCArrowTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FB342C321C646850027D654 /* LCArrowTableView.m */; };
+		2FB3CE1121D074F2003BE195 /* ZKBaseTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FB3CE1021D074F2003BE195 /* ZKBaseTableViewCell.m */; };
+		2FB3CE1421D075F9003BE195 /* ZKOddPhotosViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FB3CE1321D075F9003BE195 /* ZKOddPhotosViewController.m */; };
+		2FB3CE1721D07888003BE195 /* ZKTololScrollViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FB3CE1621D07888003BE195 /* ZKTololScrollViewController.m */; };
+		2FB3CE2C21D0857A003BE195 /* DCCycleScrollViewFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FB3CE2921D0857A003BE195 /* DCCycleScrollViewFlowLayout.m */; };
+		2FB3CE2D21D0857A003BE195 /* DCCycleScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FB3CE2A21D0857A003BE195 /* DCCycleScrollView.m */; };
+		2FB3CE2E21D0857A003BE195 /* DCCycleScrollViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FB3CE2B21D0857A003BE195 /* DCCycleScrollViewCell.m */; };
+		2FB3CE5A21D0E3BE003BE195 /* ZKHomeHeadView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FB3CE5821D0E3BE003BE195 /* ZKHomeHeadView.m */; };
+		2FB3CE5B21D0E3BE003BE195 /* ZKHomeHeadView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2FB3CE5921D0E3BE003BE195 /* ZKHomeHeadView.xib */; };
+		2FB3CE6021D0E3EA003BE195 /* ZKForecastObj.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FB3CE5E21D0E3E9003BE195 /* ZKForecastObj.m */; };
+		2FB3CE6121D0E3EA003BE195 /* ZKWeatherObj.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FB3CE5F21D0E3E9003BE195 /* ZKWeatherObj.m */; };
+		2FB3CE7021D0ED4C003BE195 /* ZKToolTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FB3CE6E21D0ED4C003BE195 /* ZKToolTableViewCell.m */; };
+		2FB3CE7121D0ED4C003BE195 /* ZKToolTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2FB3CE6F21D0ED4C003BE195 /* ZKToolTableViewCell.xib */; };
 		2FE5E09A21C7406900C00F24 /* ZKScrollViewMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FE5E09921C7406800C00F24 /* ZKScrollViewMenu.m */; };
 		2FE5E09D21C7559A00C00F24 /* ZKWebBrowseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FE5E09C21C7559A00C00F24 /* ZKWebBrowseViewController.m */; };
 		2FE6547821C9F50000E45E5B /* GKDYPersonalViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FE6547021C9F4FF00E45E5B /* GKDYPersonalViewController.m */; };
@@ -63,8 +75,6 @@
 		2FE6549621C9F53700E45E5B /* GKDYVideoPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FE6549121C9F53700E45E5B /* GKDYVideoPlayer.m */; };
 		2FE6549A21CA239A00E45E5B /* ZKToolHeadWeatherView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FE6549921CA239A00E45E5B /* ZKToolHeadWeatherView.m */; };
 		2FE6549C21CA23AE00E45E5B /* ZKToolHeadWeatherView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2FE6549B21CA23AE00E45E5B /* ZKToolHeadWeatherView.xib */; };
-		2FE6549F21CA2B3C00E45E5B /* ZKHomeHeadView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FE6549E21CA2B3C00E45E5B /* ZKHomeHeadView.m */; };
-		2FE654A121CA2B5500E45E5B /* ZKHomeHeadView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2FE654A021CA2B5500E45E5B /* ZKHomeHeadView.xib */; };
 		2FE654EB21CA324E00E45E5B /* WHWeatherSunView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FE654A721CA324E00E45E5B /* WHWeatherSunView.m */; };
 		2FE654EC21CA324E00E45E5B /* WHWeatherClound.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FE654AA21CA324E00E45E5B /* WHWeatherClound.m */; };
 		2FE654ED21CA324E00E45E5B /* WHWeatherRainView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FE654AE21CA324E00E45E5B /* WHWeatherRainView.m */; };
@@ -121,8 +131,6 @@
 		2FE6552021CA324F00E45E5B /* ele_sunnyBird8.png in Resources */ = {isa = PBXBuildFile; fileRef = 2FE654E521CA324E00E45E5B /* ele_sunnyBird8.png */; };
 		2FE6552121CA324F00E45E5B /* WHWeatherSnowView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FE654E921CA324E00E45E5B /* WHWeatherSnowView.m */; };
 		2FE6552221CA324F00E45E5B /* WHWeatherView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FE654EA21CA324E00E45E5B /* WHWeatherView.m */; };
-		2FE6552521CA45DB00E45E5B /* ZKWeatherObj.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FE6552421CA45DB00E45E5B /* ZKWeatherObj.m */; };
-		2FE6552821CA464C00E45E5B /* ZKForecastObj.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FE6552721CA464C00E45E5B /* ZKForecastObj.m */; };
 		60F939F0B7E0C06DE5608961 /* libPods-ZK_OnlyOne_Project.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5AFD847F7E9499311346F4F5 /* libPods-ZK_OnlyOne_Project.a */; };
 /* End PBXBuildFile section */
 
@@ -200,6 +208,28 @@
 		2FB342C121C646850027D654 /* LCArrowView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCArrowView.m; sourceTree = "<group>"; };
 		2FB342C221C646850027D654 /* LCArrowCellTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCArrowCellTableViewCell.h; sourceTree = "<group>"; };
 		2FB342C321C646850027D654 /* LCArrowTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCArrowTableView.m; sourceTree = "<group>"; };
+		2FB3CE0F21D074F2003BE195 /* ZKBaseTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZKBaseTableViewCell.h; sourceTree = "<group>"; };
+		2FB3CE1021D074F2003BE195 /* ZKBaseTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZKBaseTableViewCell.m; sourceTree = "<group>"; };
+		2FB3CE1221D075F8003BE195 /* ZKOddPhotosViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZKOddPhotosViewController.h; sourceTree = "<group>"; };
+		2FB3CE1321D075F9003BE195 /* ZKOddPhotosViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZKOddPhotosViewController.m; sourceTree = "<group>"; };
+		2FB3CE1521D07888003BE195 /* ZKTololScrollViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZKTololScrollViewController.h; sourceTree = "<group>"; };
+		2FB3CE1621D07888003BE195 /* ZKTololScrollViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZKTololScrollViewController.m; sourceTree = "<group>"; };
+		2FB3CE2621D0857A003BE195 /* DCCycleScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DCCycleScrollView.h; sourceTree = "<group>"; };
+		2FB3CE2721D0857A003BE195 /* DCCycleScrollViewFlowLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DCCycleScrollViewFlowLayout.h; sourceTree = "<group>"; };
+		2FB3CE2821D0857A003BE195 /* DCCycleScrollViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DCCycleScrollViewCell.h; sourceTree = "<group>"; };
+		2FB3CE2921D0857A003BE195 /* DCCycleScrollViewFlowLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DCCycleScrollViewFlowLayout.m; sourceTree = "<group>"; };
+		2FB3CE2A21D0857A003BE195 /* DCCycleScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DCCycleScrollView.m; sourceTree = "<group>"; };
+		2FB3CE2B21D0857A003BE195 /* DCCycleScrollViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DCCycleScrollViewCell.m; sourceTree = "<group>"; };
+		2FB3CE5721D0E3BD003BE195 /* ZKHomeHeadView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZKHomeHeadView.h; sourceTree = "<group>"; };
+		2FB3CE5821D0E3BE003BE195 /* ZKHomeHeadView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZKHomeHeadView.m; sourceTree = "<group>"; };
+		2FB3CE5921D0E3BE003BE195 /* ZKHomeHeadView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ZKHomeHeadView.xib; sourceTree = "<group>"; };
+		2FB3CE5C21D0E3E9003BE195 /* ZKWeatherObj.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZKWeatherObj.h; sourceTree = "<group>"; };
+		2FB3CE5D21D0E3E9003BE195 /* ZKForecastObj.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZKForecastObj.h; sourceTree = "<group>"; };
+		2FB3CE5E21D0E3E9003BE195 /* ZKForecastObj.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZKForecastObj.m; sourceTree = "<group>"; };
+		2FB3CE5F21D0E3E9003BE195 /* ZKWeatherObj.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZKWeatherObj.m; sourceTree = "<group>"; };
+		2FB3CE6D21D0ED4C003BE195 /* ZKToolTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZKToolTableViewCell.h; sourceTree = "<group>"; };
+		2FB3CE6E21D0ED4C003BE195 /* ZKToolTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZKToolTableViewCell.m; sourceTree = "<group>"; };
+		2FB3CE6F21D0ED4C003BE195 /* ZKToolTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ZKToolTableViewCell.xib; sourceTree = "<group>"; };
 		2FE5E09821C7406800C00F24 /* ZKScrollViewMenu.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZKScrollViewMenu.h; sourceTree = "<group>"; };
 		2FE5E09921C7406800C00F24 /* ZKScrollViewMenu.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZKScrollViewMenu.m; sourceTree = "<group>"; };
 		2FE5E09B21C7559A00C00F24 /* ZKWebBrowseViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZKWebBrowseViewController.h; sourceTree = "<group>"; };
@@ -233,9 +263,6 @@
 		2FE6549821CA239A00E45E5B /* ZKToolHeadWeatherView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZKToolHeadWeatherView.h; sourceTree = "<group>"; };
 		2FE6549921CA239A00E45E5B /* ZKToolHeadWeatherView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZKToolHeadWeatherView.m; sourceTree = "<group>"; };
 		2FE6549B21CA23AE00E45E5B /* ZKToolHeadWeatherView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ZKToolHeadWeatherView.xib; sourceTree = "<group>"; };
-		2FE6549D21CA2B3C00E45E5B /* ZKHomeHeadView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZKHomeHeadView.h; sourceTree = "<group>"; };
-		2FE6549E21CA2B3C00E45E5B /* ZKHomeHeadView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZKHomeHeadView.m; sourceTree = "<group>"; };
-		2FE654A021CA2B5500E45E5B /* ZKHomeHeadView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ZKHomeHeadView.xib; sourceTree = "<group>"; };
 		2FE654A321CA324A00E45E5B /* WHWeatherView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WHWeatherView.h; sourceTree = "<group>"; };
 		2FE654A421CA324A00E45E5B /* WHWeatherHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WHWeatherHeader.h; sourceTree = "<group>"; };
 		2FE654A721CA324E00E45E5B /* WHWeatherSunView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WHWeatherSunView.m; sourceTree = "<group>"; };
@@ -300,10 +327,6 @@
 		2FE654E821CA324E00E45E5B /* WHWeatherSnowView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WHWeatherSnowView.h; sourceTree = "<group>"; };
 		2FE654E921CA324E00E45E5B /* WHWeatherSnowView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WHWeatherSnowView.m; sourceTree = "<group>"; };
 		2FE654EA21CA324E00E45E5B /* WHWeatherView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WHWeatherView.m; sourceTree = "<group>"; };
-		2FE6552321CA45DB00E45E5B /* ZKWeatherObj.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZKWeatherObj.h; sourceTree = "<group>"; };
-		2FE6552421CA45DB00E45E5B /* ZKWeatherObj.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZKWeatherObj.m; sourceTree = "<group>"; };
-		2FE6552621CA464C00E45E5B /* ZKForecastObj.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZKForecastObj.h; sourceTree = "<group>"; };
-		2FE6552721CA464C00E45E5B /* ZKForecastObj.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZKForecastObj.m; sourceTree = "<group>"; };
 		5AFD847F7E9499311346F4F5 /* libPods-ZK_OnlyOne_Project.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ZK_OnlyOne_Project.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BA3FE585694D204CA0F83791 /* Pods-ZK_OnlyOne_Project.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZK_OnlyOne_Project.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ZK_OnlyOne_Project/Pods-ZK_OnlyOne_Project.debug.xcconfig"; sourceTree = "<group>"; };
 		F722BEA4DD1F1C4D3FB56D00 /* Pods-ZK_OnlyOne_Project.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZK_OnlyOne_Project.release.xcconfig"; path = "Pods/Target Support Files/Pods-ZK_OnlyOne_Project/Pods-ZK_OnlyOne_Project.release.xcconfig"; sourceTree = "<group>"; };
@@ -364,6 +387,8 @@
 				2F1B686D21C0E5630082920D /* ZKNavigationViewController.m */,
 				2F1B687221C0F03A0082920D /* ZKTabBarController.h */,
 				2F1B687321C0F03A0082920D /* ZKTabBarController.m */,
+				2FB3CE0F21D074F2003BE195 /* ZKBaseTableViewCell.h */,
+				2FB3CE1021D074F2003BE195 /* ZKBaseTableViewCell.m */,
 			);
 			path = "Base(基类)";
 			sourceTree = "<group>";
@@ -495,6 +520,7 @@
 		2F1B687921C206EA0082920D /* DuanZI */ = {
 			isa = PBXGroup;
 			children = (
+				2FB3CE2421D0857A003BE195 /* Other */,
 				2FB342B821C62B880027D654 /* Model */,
 				2FB342AF21C628570027D654 /* View */,
 				2F1B687A21C206FC0082920D /* Controller */,
@@ -543,6 +569,8 @@
 		2F1B688321C2073B0082920D /* Tool */ = {
 			isa = PBXGroup;
 			children = (
+				2FB3CE6221D0E982003BE195 /* Other */,
+				2FB3CE1821D07CA7003BE195 /* Model */,
 				2FE6549721CA237300E45E5B /* View */,
 				2F1B688421C2074F0082920D /* Controller */,
 			);
@@ -552,8 +580,12 @@
 		2F1B688421C2074F0082920D /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				2FB3CE1521D07888003BE195 /* ZKTololScrollViewController.h */,
+				2FB3CE1621D07888003BE195 /* ZKTololScrollViewController.m */,
 				2F1B688521C207610082920D /* ZKToolViewController.h */,
 				2F1B688621C207610082920D /* ZKToolViewController.m */,
+				2FB3CE1221D075F8003BE195 /* ZKOddPhotosViewController.h */,
+				2FB3CE1321D075F9003BE195 /* ZKOddPhotosViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -564,9 +596,6 @@
 				2F1B688921C233570082920D /* ZKHomeCell.h */,
 				2F1B688A21C233570082920D /* ZKHomeCell.m */,
 				2F1B688B21C233570082920D /* ZKHomeCell.xib */,
-				2FE6549D21CA2B3C00E45E5B /* ZKHomeHeadView.h */,
-				2FE6549E21CA2B3C00E45E5B /* ZKHomeHeadView.m */,
-				2FE654A021CA2B5500E45E5B /* ZKHomeHeadView.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -576,10 +605,6 @@
 			children = (
 				2F1B688F21C239EC0082920D /* ZKHomeObj.h */,
 				2F1B689021C239EC0082920D /* ZKHomeObj.m */,
-				2FE6552321CA45DB00E45E5B /* ZKWeatherObj.h */,
-				2FE6552421CA45DB00E45E5B /* ZKWeatherObj.m */,
-				2FE6552621CA464C00E45E5B /* ZKForecastObj.h */,
-				2FE6552721CA464C00E45E5B /* ZKForecastObj.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -672,12 +697,65 @@
 			path = ZKMenuView;
 			sourceTree = "<group>";
 		};
+		2FB3CE1821D07CA7003BE195 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				2FB3CE5D21D0E3E9003BE195 /* ZKForecastObj.h */,
+				2FB3CE5E21D0E3E9003BE195 /* ZKForecastObj.m */,
+				2FB3CE5C21D0E3E9003BE195 /* ZKWeatherObj.h */,
+				2FB3CE5F21D0E3E9003BE195 /* ZKWeatherObj.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		2FB3CE2421D0857A003BE195 /* Other */ = {
+			isa = PBXGroup;
+			children = (
+				2FB3CE2521D0857A003BE195 /* DCCycleScrollView(顶部视图滑动) */,
+			);
+			path = Other;
+			sourceTree = "<group>";
+		};
+		2FB3CE2521D0857A003BE195 /* DCCycleScrollView(顶部视图滑动) */ = {
+			isa = PBXGroup;
+			children = (
+				2FB3CE2621D0857A003BE195 /* DCCycleScrollView.h */,
+				2FB3CE2721D0857A003BE195 /* DCCycleScrollViewFlowLayout.h */,
+				2FB3CE2821D0857A003BE195 /* DCCycleScrollViewCell.h */,
+				2FB3CE2921D0857A003BE195 /* DCCycleScrollViewFlowLayout.m */,
+				2FB3CE2A21D0857A003BE195 /* DCCycleScrollView.m */,
+				2FB3CE2B21D0857A003BE195 /* DCCycleScrollViewCell.m */,
+			);
+			path = "DCCycleScrollView(顶部视图滑动)";
+			sourceTree = "<group>";
+		};
+		2FB3CE6221D0E982003BE195 /* Other */ = {
+			isa = PBXGroup;
+			children = (
+				2FB3CE6321D0E98C003BE195 /* ZKCycleScrollView */,
+			);
+			path = Other;
+			sourceTree = "<group>";
+		};
+		2FB3CE6321D0E98C003BE195 /* ZKCycleScrollView */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ZKCycleScrollView;
+			sourceTree = "<group>";
+		};
 		2FE6549721CA237300E45E5B /* View */ = {
 			isa = PBXGroup;
 			children = (
 				2FE6549821CA239A00E45E5B /* ZKToolHeadWeatherView.h */,
 				2FE6549921CA239A00E45E5B /* ZKToolHeadWeatherView.m */,
 				2FE6549B21CA23AE00E45E5B /* ZKToolHeadWeatherView.xib */,
+				2FB3CE5721D0E3BD003BE195 /* ZKHomeHeadView.h */,
+				2FB3CE5821D0E3BE003BE195 /* ZKHomeHeadView.m */,
+				2FB3CE5921D0E3BE003BE195 /* ZKHomeHeadView.xib */,
+				2FB3CE6D21D0ED4C003BE195 /* ZKToolTableViewCell.h */,
+				2FB3CE6E21D0ED4C003BE195 /* ZKToolTableViewCell.m */,
+				2FB3CE6F21D0ED4C003BE195 /* ZKToolTableViewCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -901,7 +979,7 @@
 				2FE6550A21CA324F00E45E5B /* ele_sunnyNightMeteor2.png in Resources */,
 				2FE654F221CA324E00E45E5B /* ele_sunnyBirdInvertedImage3.png in Resources */,
 				2FE6550F21CA324F00E45E5B /* ele_rainLine2.png in Resources */,
-				2FE654A121CA2B5500E45E5B /* ZKHomeHeadView.xib in Resources */,
+				2FB3CE7121D0ED4C003BE195 /* ZKToolTableViewCell.xib in Resources */,
 				2F1B688D21C233570082920D /* ZKHomeCell.xib in Resources */,
 				2FE6550C21CA324F00E45E5B /* ele_sunnyCloud1.png in Resources */,
 				2FE6550721CA324F00E45E5B /* ele_sunnyNightMeteor1.png in Resources */,
@@ -915,6 +993,7 @@
 				2F1B683521BF92790082920D /* LaunchScreen.storyboard in Resources */,
 				2FE6549C21CA23AE00E45E5B /* ZKToolHeadWeatherView.xib in Resources */,
 				2FE6550821CA324F00E45E5B /* ele_sunnyNightStar1.png in Resources */,
+				2FB3CE5B21D0E3BE003BE195 /* ZKHomeHeadView.xib in Resources */,
 				2FE6551421CA324F00E45E5B /* ele_white_cloud_5.png in Resources */,
 				2FE6551D21CA324F00E45E5B /* ele_white_cloud_11.png in Resources */,
 				2F1B686821BFB7820082920D /* Images.xcassets in Resources */,
@@ -1021,10 +1100,13 @@
 				2F1B685C21BF97F40082920D /* ZKEmptyView.m in Sources */,
 				2FE654EB21CA324E00E45E5B /* WHWeatherSunView.m in Sources */,
 				2FB342C621C646850027D654 /* LCArrowView.m in Sources */,
+				2FB3CE2D21D0857A003BE195 /* DCCycleScrollView.m in Sources */,
 				2FE6548A21C9F51E00E45E5B /* GKDYScrollView.m in Sources */,
 				2F1B684F21BF95D20082920D /* UIImage+Extension.m in Sources */,
+				2FB3CE1721D07888003BE195 /* ZKTololScrollViewController.m in Sources */,
 				2F1B688221C207350082920D /* ZKVideoViewController.m in Sources */,
 				2FE6547821C9F50000E45E5B /* GKDYPersonalViewController.m in Sources */,
+				2FB3CE1121D074F2003BE195 /* ZKBaseTableViewCell.m in Sources */,
 				2FE6548021C9F51500E45E5B /* GKDYPersonalModel.m in Sources */,
 				2F1B686521BF9DFB0082920D /* ZKHomeViewController.m in Sources */,
 				2F1B686B21C0E34F0082920D /* NSObject+Extension.m in Sources */,
@@ -1034,6 +1116,7 @@
 				2FB342B321C6289E0027D654 /* ZKDuanziCell.m in Sources */,
 				2F1B684921BF94B20082920D /* UIColor+Extension.m in Sources */,
 				2FB342AE21C625B50027D654 /* UIBarButtonItem+Extension.m in Sources */,
+				2FB3CE2C21D0857A003BE195 /* DCCycleScrollViewFlowLayout.m in Sources */,
 				2F1B687D21C2070F0082920D /* ZKDuanZiViewController.m in Sources */,
 				2FE6552121CA324F00E45E5B /* WHWeatherSnowView.m in Sources */,
 				2FE654EC21CA324E00E45E5B /* WHWeatherClound.m in Sources */,
@@ -1041,24 +1124,27 @@
 				2FE5E09A21C7406900C00F24 /* ZKScrollViewMenu.m in Sources */,
 				2F1B688C21C233570082920D /* ZKHomeCell.m in Sources */,
 				2F1B685921BF974C0082920D /* ZKButton.m in Sources */,
+				2FB3CE5A21D0E3BE003BE195 /* ZKHomeHeadView.m in Sources */,
 				2F1B686E21C0E5630082920D /* ZKNavigationViewController.m in Sources */,
 				2F1B686021BF9BD70082920D /* ZKConstant.m in Sources */,
 				2F2AD8E921C8F73C00F5B8A7 /* NSString+Extension.m in Sources */,
+				2FB3CE7021D0ED4C003BE195 /* ZKToolTableViewCell.m in Sources */,
 				2FE6549421C9F53700E45E5B /* GKSliderView.m in Sources */,
 				2FE6548D21C9F52700E45E5B /* GKDYVideoViewModel.m in Sources */,
 				2F1B684621BF93770082920D /* ZKManager.m in Sources */,
 				2F1B688721C207610082920D /* ZKToolViewController.m in Sources */,
+				2FB3CE1421D075F9003BE195 /* ZKOddPhotosViewController.m in Sources */,
 				2FE6548821C9F51E00E45E5B /* GKDYVideoControlView.m in Sources */,
 				2F1B685221BF963C0082920D /* UILabel+Extension.m in Sources */,
 				2FE5E09D21C7559A00C00F24 /* ZKWebBrowseViewController.m in Sources */,
 				2F1B683021BF92770082920D /* ZK_OnlyOne_Project.xcdatamodeld in Sources */,
-				2FE6549F21CA2B3C00E45E5B /* ZKHomeHeadView.m in Sources */,
+				2FB3CE2E21D0857A003BE195 /* DCCycleScrollViewCell.m in Sources */,
 				2FE654ED21CA324E00E45E5B /* WHWeatherRainView.m in Sources */,
-				2FE6552821CA464C00E45E5B /* ZKForecastObj.m in Sources */,
+				2FB3CE6021D0E3EA003BE195 /* ZKForecastObj.m in Sources */,
 				2F1B683821BF92790082920D /* main.m in Sources */,
-				2FE6552521CA45DB00E45E5B /* ZKWeatherObj.m in Sources */,
 				2FE6548121C9F51500E45E5B /* GKDYVideoModel.m in Sources */,
 				2FB342BB21C62B950027D654 /* ZKDuanziObj.m in Sources */,
+				2FB3CE6121D0E3EA003BE195 /* ZKWeatherObj.m in Sources */,
 				2FE6548921C9F51E00E45E5B /* GKDYVideoView.m in Sources */,
 				2F1B687421C0F03A0082920D /* ZKTabBarController.m in Sources */,
 				2F1B689121C239EC0082920D /* ZKHomeObj.m in Sources */,

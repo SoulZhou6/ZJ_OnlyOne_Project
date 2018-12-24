@@ -12,8 +12,8 @@
 #import "zhTableViewAnimations.h"
 #import "LCArrowView.h"
 #import "ZKHomeHeadView.h"
-
-@interface ZKDuanZiViewController ()<SelectIndexPathDelegate>
+#import "DCCycleScrollView.h"
+@interface ZKDuanZiViewController ()<SelectIndexPathDelegate,DCCycleScrollViewDelegate>
 @property (nonatomic,strong)LCArrowView * popView;
 @end
 
@@ -29,7 +29,7 @@
     
     self.view.backgroundColor = [UIColor whiteColor];
     [self setStyleView];
-    [self requestWeatherData];
+  
     [self requestJokeData];
    
 }
@@ -39,7 +39,7 @@
     jokeArray = [[NSMutableArray alloc]init];
     selectIndex = 0;
     pageIndex = 1;
-    self.tableView.frame =  CGRectMake(0, 0 , Screen_Width, Screen_Height - ZK_TopHeight-ZK_TabBarHeight);
+    self.tableView.frame =  CGRectMake(0, ZK_TopHeight , Screen_Width, Screen_Height - ZK_TopHeight-ZK_TabBarHeight);
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     UIView * headView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, 0, 10)];
     headView.backgroundColor = [UIColor groupTableViewBackgroundColor];
@@ -91,28 +91,6 @@
     self.tableView.zh_reloadAnimationType =  arc4random() % (10 - 0 + 1) + 0;
     selectIndex = index;
     [self requestJokeData];
-}
-
-
-#pragma mark - 请求天气数据接口
-
-- (void)requestWeatherData{
-    
-    
-    NSDictionary * parms = @{@"city":@"深圳"};
-    
-    [[ZKManager shareManager] requestWithRoutineMethod:RequestMethodGet url:weatherUrl showLoading:YES param:parms success:^(NSURLSessionDataTask *operation, id responseObject) {
-        
-        DLog(@"天气%@",responseObject);
-        
-        ZKHomeHeadView * headView = [ZKHomeHeadView initWithNibFrame:CGRectMake(0, 0, Screen_Width, 170)];
-        self.tableView.tableHeaderView = headView;
-        ZKWeatherObj * model = [ZKWeatherObj yy_modelWithDictionary:responseObject[@"data"]];
-        [headView setWeatherObj:model];
-        
-    } failure:^(NSURLSessionDataTask *operation, NSError *error) {
-        
-    }];
 }
 
 #pragma mark - 下拉刷新

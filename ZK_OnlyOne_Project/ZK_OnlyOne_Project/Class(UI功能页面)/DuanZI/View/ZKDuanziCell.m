@@ -11,8 +11,6 @@
 @implementation ZKDuanziCell
 
 
-
-
 +(instancetype)cellWithTableView:(UITableView *)tableView identifier:(NSString *)identifier{
     
     

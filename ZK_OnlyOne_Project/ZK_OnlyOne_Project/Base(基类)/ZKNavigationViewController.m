@@ -60,14 +60,14 @@
  */
 + (void)load {
     
-    NSArray *array = [NSArray arrayWithObjects:[self class], nil]; //iOS9.0后使用
-    UINavigationBar *navBar = [UINavigationBar appearanceWhenContainedInInstancesOfClasses:array];
-    NSMutableDictionary *attribute = [NSMutableDictionary dictionary];
-    attribute[NSForegroundColorAttributeName] = [UIColor colorDarkTextColor];
-    attribute[NSFontAttributeName] = BOLD_FONT(17);
-    navBar.titleTextAttributes = attribute;
-    UIImage *backgroundImage = [UIImage imageWithColor:[UIColor colorWhiteColor]];
-    [navBar setBackgroundImage:backgroundImage forBarMetrics:UIBarMetricsDefault];
+//    NSArray *array = [NSArray arrayWithObjects:[self class], nil]; //iOS9.0后使用
+//    UINavigationBar *navBar = [UINavigationBar appearanceWhenContainedInInstancesOfClasses:array];
+//    NSMutableDictionary *attribute = [NSMutableDictionary dictionary];
+//    attribute[NSForegroundColorAttributeName] = [UIColor colorDarkTextColor];
+//    attribute[NSFontAttributeName] = BOLD_FONT(17);
+//    navBar.titleTextAttributes = attribute;
+//    UIImage *backgroundImage = [UIImage imageWithColor:[UIColor colorWhiteColor]];
+//    [navBar setBackgroundImage:backgroundImage forBarMetrics:UIBarMetricsDefault];
 }
 
 

@@ -50,6 +50,13 @@
             
             self.sourceThree.text = [NSString stringWithFormat:@"数据来源: %@   发布时间: %@",model.author_name,model.date];
             break;
+        case 3:
+            self.contentFour.text = model.title;
+            [self.fourImgOne setImageWithURL:[NSURL URLWithString:model.thumbnail_pic_s] placeholderImage:DefaultImage];
+            [self.fourImgTwo setImageWithURL:[NSURL URLWithString:model.thumbnail_pic_s02] placeholderImage:DefaultImage];
+            self.sourceFour.text = [NSString stringWithFormat:@"数据来源: %@     发布时间: %@",model.author_name,model.date];
+            
+            break;
             
         default:
             break;

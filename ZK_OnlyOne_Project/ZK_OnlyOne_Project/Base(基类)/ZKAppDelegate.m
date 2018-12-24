@@ -8,7 +8,7 @@
 
 #import "ZKAppDelegate.h"
 #import "ZKTabBarController.h"
-
+#import "WRNavigationBar.h"
 @interface ZKAppDelegate ()
 
 @end
@@ -24,8 +24,33 @@
     self.window.rootViewController = [ZKTabBarController tabbar];
     [self.window makeKeyAndVisible];
     
-//    [[UINavigationBar appearance]  setBackgroundImage:[[UIImage alloc] init] forBarPosition:UIBarPositionAny barMetrics:UIBarMetricsDefault];
-//    [[UINavigationBar appearance] setShadowImage:[[UIImage alloc] init]];
+    
+    
+    
+    
+   UIColor *  MainNavBarColor = [UIColor colorWithRed:0/255.0 green:175/255.0 blue:240/255.0 alpha:1];
+    UIColor *  MainViewColor   = [UIColor colorWithRed:126/255.0 green:126/255.0 blue:126/255.0 alpha:1];
+    
+    // 设置是 广泛使用WRNavigationBar，还是局部使用WRNavigationBar，目前默认是广泛使用
+    [WRNavigationBar wr_widely];
+    [WRNavigationBar wr_setBlacklist:@[@"SpecialController",
+                                       @"TZPhotoPickerController",
+                                       @"TZGifPhotoPreviewController",
+                                       @"TZAlbumPickerController",
+                                       @"TZPhotoPreviewController",
+                                       @"TZVideoPlayerController"]];
+    
+    // 设置导航栏默认的背景颜色
+    [WRNavigationBar wr_setDefaultNavBarBarTintColor:MainNavBarColor];
+    // 设置导航栏所有按钮的默认颜色
+    [WRNavigationBar wr_setDefaultNavBarTintColor:[UIColor whiteColor]];
+    // 设置导航栏标题默认颜色
+    [WRNavigationBar wr_setDefaultNavBarTitleColor:[UIColor whiteColor]];
+    // 统一设置状态栏样式
+    [WRNavigationBar wr_setDefaultStatusBarStyle:UIStatusBarStyleLightContent];
+    // 如果需要设置导航栏底部分割线隐藏，可以在这里统一设置
+    [WRNavigationBar wr_setDefaultNavBarShadowImageHidden:YES];
+    
     return YES;
 }
 

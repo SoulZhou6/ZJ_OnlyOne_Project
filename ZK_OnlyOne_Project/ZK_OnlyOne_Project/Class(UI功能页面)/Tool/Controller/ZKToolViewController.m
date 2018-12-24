@@ -7,84 +7,46 @@
 //
 
 #import "ZKToolViewController.h"
-#import "WRCustomNavigationBar.h"
-
-
-#define NAVBAR_COLORCHANGE_POINT (IMAGE_HEIGHT - NAV_HEIGHT*2)
-#define IMAGE_HEIGHT 250
-#define NAV_HEIGHT 64
-
+#import "ZKHomeHeadView.h"
 
 
 @interface ZKToolViewController ()<UITableViewDelegate, UITableViewDataSource>
-@property (nonatomic, strong) WRCustomNavigationBar *customNavBar;
 
-@property (nonatomic, strong) UITableView *tableView;
-@property (nonatomic, strong) UIImageView *topView;
 @end
 
 @implementation ZKToolViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.navigationController.navigationBar.hidden = YES;
-    self.automaticallyAdjustsScrollViewInsets = NO;
-    
     
     self.view.backgroundColor = [UIColor greenColor];
+    self.tableView.frame = CGRectMake(0, ZK_TopHeight, Screen_Width, Screen_Height-ZK_TopHeight-ZK_TabBarHeight);
     [self.view addSubview:self.tableView];
-    self.tableView.tableHeaderView = self.topView;
-    [self.view insertSubview:self.customNavBar aboveSubview:self.tableView];
-    [self setupNavBar];
-    self.customNavBar.title = @"奥黛丽·赫本";
-    [self.customNavBar wr_setBottomLineHidden:YES];
-    if (@available(iOS 11.0, *)) {
-        self.tableView.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentNever;
-    }
-    // 设置初始导航栏透明度
-    [self.customNavBar wr_setBackgroundAlpha:0];
-    [self.customNavBar wr_setLeftButtonWithImage:[UIImage imageNamed:@"back"]];
+
+
+
     
-    
+      [self requestWeatherData];
 }
 
-- (void)setupNavBar
-{
-    [self.view addSubview:self.customNavBar];
+#pragma mark - 请求天气数据接口
+
+- (void)requestWeatherData{
     
-    // 设置自定义导航栏背景图片
-    self.customNavBar.barBackgroundImage = [UIImage imageNamed:@"bannerA"];
-//    [UIImage im];
-//    self.customNavBar.backgroundColor = [UIColor colorWithHexString:@"#1296db"];
-    // 设置自定义导航栏标题颜色
-    self.customNavBar.titleLabelColor = [UIColor whiteColor];
+    NSDictionary * parms = @{@"city":@"深圳"};
     
-    if (self.navigationController.childViewControllers.count != 1) {
-        [self.customNavBar wr_setLeftButtonWithTitle:@"<<" titleColor:[UIColor whiteColor]];
-    }
-}
-
-- (WRCustomNavigationBar *)customNavBar
-{
-    if (_customNavBar == nil) {
-        _customNavBar = [WRCustomNavigationBar CustomNavigationBar];
-    }
-    return _customNavBar;
-}
-
-
-- (void)scrollViewDidScroll:(UIScrollView *)scrollView
-{
-    CGFloat offsetY = scrollView.contentOffset.y;
-    if (offsetY > NAVBAR_COLORCHANGE_POINT)
-    {
-        CGFloat alpha = (offsetY - NAVBAR_COLORCHANGE_POINT) / NAV_HEIGHT;
-        [self.customNavBar wr_setBackgroundAlpha:alpha];
-    }
-    else
-    {
-        [self.customNavBar wr_setBackgroundAlpha:0];
-    }
+    [[ZKManager shareManager] requestWithRoutineMethod:RequestMethodGet url:weatherUrl showLoading:YES param:parms success:^(NSURLSessionDataTask *operation, id responseObject) {
+        
+        DLog(@"天气%@",responseObject);
+        
+        ZKHomeHeadView * headView = [ZKHomeHeadView initWithNibFrame:CGRectMake(0, 0, Screen_Width, 250)];
+        self.tableView.tableHeaderView = headView;
+        ZKWeatherObj * model = [ZKWeatherObj yy_modelWithDictionary:responseObject[@"data"]];
+        [headView setWeatherObj:model];
+        
+    } failure:^(NSURLSessionDataTask *operation, NSError *error) {
+        
+    }];
 }
 
 
@@ -118,29 +80,6 @@
 //    [self.navigationController pushViewController:vc animated:YES];
 }
 
-#pragma mark - getter / setter
-- (UITableView *)tableView
-{
-    if (_tableView == nil) {
-        CGRect frame = CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height);
-        _tableView = [[UITableView alloc] initWithFrame:frame
-                                                  style:UITableViewStylePlain];
-        _tableView.contentInset = UIEdgeInsetsMake(0, 0, 0, 0);
-        _tableView.delegate = self;
-        _tableView.dataSource = self;
-    }
-    return _tableView;
-}
-
-- (UIImageView *)topView
-{
-    if (_topView == nil) {
-        _topView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"zk_tool_headBg"]];
-        _topView.frame = CGRectMake(0, 0, self.view.frame.size.width, IMAGE_HEIGHT);
-        _topView.contentMode = UIViewContentModeScaleToFill;
-    }
-    return _topView;
-}
 
 
 

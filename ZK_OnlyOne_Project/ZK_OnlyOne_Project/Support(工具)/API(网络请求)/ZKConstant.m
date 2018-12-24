@@ -19,6 +19,13 @@ NSString * const newsUrl = @"http://v.juhe.cn/toutiao/index";
 NSString * const newsAppKey = @"54c0a6a946620b7e5175e5a86b25bb01";
 
 
+/**微信精选*/
+NSString * const newsWeiChatUrl = @"http://api.avatardata.cn/WxNews/Query";
+
+/**微信精选appKey*/
+NSString * const newsWeiChatAppKey = @"ffb74483b94e4c9c85b3c5a23ad6a044";
+
+
 /**笑话----按更新时间查询笑话---- 接口地址*/
 NSString * const jokeListUrl = @"http://api.avatardata.cn/Joke/QueryJokeByTime";
 /**笑话----最新笑话---- 接口地址*/

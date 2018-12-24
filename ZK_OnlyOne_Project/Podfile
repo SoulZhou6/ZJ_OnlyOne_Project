@@ -17,4 +17,6 @@ target:ZK_OnlyOne_Project do
     pod 'TXLiteAVSDK_Player'  # 腾讯云播放器-独立播放器版
     pod 'GKMessageTool'
     pod 'WRNavigationBar'
+    pod 'ICPagingManager'
+    pod 'SDCycleScrollView'
 end

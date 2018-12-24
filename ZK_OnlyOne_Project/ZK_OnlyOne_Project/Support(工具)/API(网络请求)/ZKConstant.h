@@ -19,6 +19,12 @@ extern NSString * const newsUrl;
 /**新闻appKey*/
 extern NSString * const newsAppKey;
 
+/**微信精选*/
+extern NSString * const newsWeiChatUrl;
+
+/**微信精选appKey*/
+extern NSString * const newsWeiChatAppKey;
+
 
 /**笑话----按更新时间查询笑话---- 接口地址*/
 extern NSString * const jokeListUrl;

@@ -29,6 +29,13 @@ NS_ASSUME_NONNULL_BEGIN
 @property (weak, nonatomic) IBOutlet UILabel *contentThree;
 @property (weak, nonatomic) IBOutlet UILabel *sourceThree;
 
+//// 第四个cell
+@property (weak, nonatomic) IBOutlet UILabel *contentFour;
+@property (weak, nonatomic) IBOutlet UIImageView *fourImgOne;
+@property (weak, nonatomic) IBOutlet UIImageView *fourImgTwo;
+@property (weak, nonatomic) IBOutlet UILabel *sourceFour;
+
+
 - (void)setHomeObj:(ZKHomeObj *)model index:(NSInteger)index;
 
 @end

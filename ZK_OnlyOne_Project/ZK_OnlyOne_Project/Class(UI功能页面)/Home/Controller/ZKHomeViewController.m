@@ -12,11 +12,19 @@
 #import "ZKHomeObj.h"
 #import "ZKScrollViewMenu.h"
 #import "ZKWebBrowseViewController.h"
-
-
+#import "WRNavigationBar.h"
+#import <SDCycleScrollView/SDCycleScrollView.h>
 static NSString *const kNewsCellReuseIdentifier = @"kNewsCellReuseIdentifier";
 
-@interface ZKHomeViewController ()<ZKScrollViewMenuDelegate, UIGestureRecognizerDelegate>
+
+#define NAVBAR_COLORCHANGE_POINT (-IMAGE_HEIGHT + NAV_HEIGHT*2)
+#define NAV_HEIGHT 64
+#define IMAGE_HEIGHT 260
+#define SCROLL_DOWN_LIMIT 70
+#define LIMIT_OFFSET_Y -(IMAGE_HEIGHT + SCROLL_DOWN_LIMIT)
+
+
+@interface ZKHomeViewController ()<ZKScrollViewMenuDelegate, UIGestureRecognizerDelegate,SDCycleScrollViewDelegate>
 @property (nonatomic,strong)ZKTableViewProtocol * protocol;
 
 @property (nonatomic, strong) ZKScrollViewMenu *scrollMenu;
@@ -30,11 +38,34 @@ static NSString *const kNewsCellReuseIdentifier = @"kNewsCellReuseIdentifier";
 
 @property (nonatomic, assign) NSInteger scrollIndex;
 @property (nonatomic, assign) NSInteger count;
+
+@property (nonatomic, strong) SDCycleScrollView *advView;
+@property (nonatomic, strong) NSMutableArray *adImageArray;
+@property (nonatomic, strong) NSMutableArray *adTitleArray;
 @end
 
 @implementation ZKHomeViewController
 
 
+
+- (NSMutableArray *)adImageArray{
+    
+    if (!_adImageArray) {
+        
+        _adImageArray = [[NSMutableArray alloc]init];
+    }
+    
+    return _adImageArray;
+}
+- (NSMutableArray *)adTitleArray{
+    
+    if (!_adTitleArray) {
+        
+        _adTitleArray = [[NSMutableArray alloc]init];
+    }
+    
+    return _adTitleArray;
+}
 
 - (NSMutableArray *)newsObjects
 {
@@ -49,7 +80,7 @@ static NSString *const kNewsCellReuseIdentifier = @"kNewsCellReuseIdentifier";
 {
     if (!_titleObjects) {
         
-        _titleObjects = @[ @"头条",@"社会", @"国内",@"国际", @"娱乐",@"体育", @"军事",@"科技",@"财经",@"时尚"];
+        _titleObjects = @[@"社会", @"国内",@"国际", @"娱乐",@"体育", @"军事",@"科技",@"财经",@"时尚"];
     }
     return _titleObjects;
 }
@@ -58,39 +89,50 @@ static NSString *const kNewsCellReuseIdentifier = @"kNewsCellReuseIdentifier";
 {
     if (!_idsObjects) {
         
-        _idsObjects = @[@"top", @"shehui",@"guonei",@"guoji",@"yule",@"tiyu",@"junshi",@"keji",@"caijing",@"shishang"];
+        _idsObjects = @[@"shehui",@"guonei",@"guoji",@"yule",@"tiyu",@"junshi",@"keji",@"caijing",@"shishang"];
     }
     return _idsObjects;
 }
 
+
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-    self.navigationItem.title = @"头条";
-    
-    
+    self.tableView.contentInset = UIEdgeInsetsMake(IMAGE_HEIGHT-64, 0, 0, 0);
+//    self.navigationItem.title = @"头条";
+
+    [self requestWeiChatNewsData];
     self.view.backgroundColor = [UIColor whiteColor];
     [self configSubview];
+    
+    
+    
+     [self wr_setNavBarBackgroundAlpha:0];
+    
+    [self requestNewsListData];
    
 }
 
 
 - (void)configSubview
 {
-    self.categoryId  = @"top"; //默认加载全部
+    self.categoryId  = @"shehui"; //默认加载全部
     self.scrollIndex = 0;
+    
     
     ZKScrollViewMenu *scrollMenu = [[ZKScrollViewMenu alloc] initWithOrigin:CGPointMake(0, 0) height:40 titles:self.titleObjects];
     scrollMenu.delegate = self;
-    [self.view addSubview:scrollMenu];
+//    [self.view addSubview:scrollMenu];
     self.scrollMenu = scrollMenu;
     
+    
     CGFloat tableY = CGRectGetMaxY(scrollMenu.frame);
-    CGFloat tableH = KIsiPhoneX ? (Screen_Height-88-83-tableY) : (Screen_Height-49-64-tableY);
-    self.tableView.frame = CGRectMake(0, tableY, Screen_Width, tableH);
-    self.tableView.tableFooterView = [[UIView alloc] initWithFrame:CGRectZero];
-   
+    CGFloat tableH = KIsiPhoneX ? (Screen_Height-88-83) : (Screen_Height-49);
+    self.tableView.frame = CGRectMake(0, 0, Screen_Width, tableH);
+//    self.tableView = [[UITableView alloc]initWithFrame:CGRectMake(0, 0, Screen_Width, tableH) style:UITableViewStylePlain];
+    
+    
     [self.view addSubview:self.tableView];
+    self.tableView.tableHeaderView = self.scrollMenu;
     [self.view addSubview:self.reachButton];
     
     // 添加轻扫手势
@@ -100,6 +142,7 @@ static NSString *const kNewsCellReuseIdentifier = @"kNewsCellReuseIdentifier";
     WeakSelf;
     self.tableView.mj_header = [MJRefreshGifHeader headerWithRefreshingBlock:^{
          [weakSelf.newsObjects removeAllObjects];
+        
         [weakSelf requestNewsListData];
     }];
     
@@ -111,7 +154,72 @@ static NSString *const kNewsCellReuseIdentifier = @"kNewsCellReuseIdentifier";
         [weakSelf requestNewsListData];
     }];
     
-    [self.tableView.mj_header beginRefreshing];
+//    [self.tableView.mj_header beginRefreshing];
+}
+
+#pragma mark - 请求新闻头条数据数据
+- (void)requestWeiChatNewsData{
+    
+    NSDictionary * parms = @{@"key":newsAppKey,@"type":@"top"};
+    [[ZKManager shareManager] requestWithRoutineMethod:RequestMethodGet url:newsUrl showLoading:YES param:parms success:^(NSURLSessionDataTask *operation, id responseObject) {
+        
+        DLog(@"%@",responseObject);
+        if ([responseObject[@"error_code"] intValue] == 0) {
+            
+            [self handleWeiChatData:responseObject[@"result"][@"data"]];
+        }
+        
+        
+    } failure:^(NSURLSessionDataTask *operation, NSError *error) {
+        
+        [[ZKManager shareManager] alertMsg:@"网络不给力"];
+    }];
+}
+
+#pragma mark - 处理新闻头条数据数据
+- (void)handleWeiChatData:(NSMutableArray *)array{
+    
+    
+    NSMutableArray * arr = [[NSMutableArray alloc]init];
+    
+    for (int i=0; i<array.count; i++) {
+        
+        ZKHomeObj * model = [ZKHomeObj yy_modelWithDictionary:array[i]];
+        
+        if (model.thumbnail_pic_s!=nil&&![model.thumbnail_pic_s isKindOfClass:[NSNull class]]) {
+            
+            [arr addObject:model];
+        }
+    }
+    
+    NSMutableArray * imageArray = [[NSMutableArray alloc]init];
+    NSMutableArray * titleArray = [[NSMutableArray alloc]init];
+    for (int i=0; i<5; i++) {
+        
+        ZKHomeObj * model = arr[i];
+        
+        [imageArray addObject:model.thumbnail_pic_s];
+        [titleArray addObject:model.title];
+    }
+    
+    
+    _advView = [SDCycleScrollView cycleScrollViewWithFrame:CGRectMake(0, -IMAGE_HEIGHT, Screen_Width, IMAGE_HEIGHT) imageNamesGroup:imageArray];
+    _advView.pageDotColor = [UIColor grayColor];
+    _advView.currentPageDotColor = [UIColor orangeColor];
+    _advView.titlesGroup = titleArray;
+    _advView.titleLabelHeight = IMAGE_HEIGHT * 0.25;
+    _advView.titleLabelTextColor = [UIColor whiteColor];
+    _advView.titleLabelTextFont = [UIFont systemFontOfSize:18];
+    _advView.bannerImageViewContentMode = UIViewContentModeScaleAspectFill;
+    
+    [self.tableView addSubview:_advView];
+    
+}
+
+#pragma mark - 滑动图点击回调方法
+- (void)cycleScrollView:(SDCycleScrollView *)cycleScrollView didSelectItemAtIndex:(NSInteger)index{
+    
+    
 }
 
 #pragma mark - 请求新闻数据
@@ -122,7 +230,7 @@ static NSString *const kNewsCellReuseIdentifier = @"kNewsCellReuseIdentifier";
                              @"type":self.categoryId
                              };
     WeakSelf;
-    [[ZKManager shareManager] requestWithRoutineMethod:RequestMethodGet url:newsUrl showLoading:NO param:parms success:^(NSURLSessionDataTask *operation, id responseObject) {
+    [[ZKManager shareManager] requestWithRoutineMethod:RequestMethodGet url:newsUrl showLoading:YES param:parms success:^(NSURLSessionDataTask *operation, id responseObject) {
         
         DLog(@"%@",responseObject);
         
@@ -141,6 +249,9 @@ static NSString *const kNewsCellReuseIdentifier = @"kNewsCellReuseIdentifier";
         [[ZKManager shareManager] alertMsg:@"网络不给力"];
     }];
 }
+
+
+
 
 // 主线程刷新
 - (void)mainQueueRefresh
@@ -212,6 +323,7 @@ static NSString *const kNewsCellReuseIdentifier = @"kNewsCellReuseIdentifier";
         [self.scrollMenu scrollToAtIndex:self.scrollIndex];
         self.tableView.scrollEnabled = YES;
         [self.tableView.mj_header beginRefreshing]; //重刷列表
+//        [self requestNewsListData];
     });
 }
 
@@ -223,6 +335,7 @@ static NSString *const kNewsCellReuseIdentifier = @"kNewsCellReuseIdentifier";
 }
 
 #pragma mark - table for data
+
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     
@@ -243,16 +356,19 @@ static NSString *const kNewsCellReuseIdentifier = @"kNewsCellReuseIdentifier";
             
             identifier = @"HomeCellOne";
             index = 0;
-        }else if (model.thumbnail_pic_s02!=nil){
+        }else if (model.thumbnail_pic_s!=nil&& model.thumbnail_pic_s02 == nil){
             
             identifier = @"HomeCellTwo";
             index = 1;
-        }else{
+        }else if(model.thumbnail_pic_s == nil){
             
             identifier = @"HomeCellThree";
             index = 2;
+        }else{
+            
+            identifier = @"HomeCellFour";
+            index = 3;
         }
-        
         
         ZKHomeCell * cell = [ZKHomeCell cellWithTableView:tableView identifier:identifier index:index];
         [cell setHomeObj:model index:index];
@@ -302,26 +418,18 @@ static NSString *const kNewsCellReuseIdentifier = @"kNewsCellReuseIdentifier";
         if(model.thumbnail_pic_s03!=nil){
             
             return 168;
-        }else if(model.thumbnail_pic_s02!=nil||model.thumbnail_pic_s!=nil){
+        }else if(model.thumbnail_pic_s!=nil||model.thumbnail_pic_s02==nil){
             return 122;
-        }else{
+        }else if(model.thumbnail_pic_s == nil){
             return 96;
+        }else{
+            return 194;
         }
     }else{
         
         return 0;
     }
     
-}
-
-- (void)scrollViewDidScroll:(UIScrollView *)scrollView {
-    CGFloat offsetY = scrollView.contentOffset.y;
-    
-    if (offsetY > self.view.frame.size.height-158) {
-        self.reachButton.hidden = NO;
-    }else {
-        self.reachButton.hidden = YES;
-    }
 }
 
 #pragma mark - PagingScrollMenuDelegate
@@ -336,6 +444,56 @@ static NSString *const kNewsCellReuseIdentifier = @"kNewsCellReuseIdentifier";
     }
     // 重新请求列表
     [self.tableView.mj_header beginRefreshing];
+}
+
+
+
+//- (SDCycleScrollView *)advView
+//{
+//    if (_advView == nil) {
+//        NSArray *localImages = @[@"localImg6", @"localImg7", @"localImg8", @"localImg9", @"localImg10"];
+//        NSArray *descs = @[@"韩国防部回应停止部署萨德:遵照最高统帅指导方针",
+//                           @"勒索病毒攻击再次爆发 国内校园网大面积感染",
+//                           @"Win10秋季更新重磅功能：跟安卓与iOS无缝连接",
+//                           @"《琅琊榜2》为何没有胡歌？胡歌：我看过剧本，离开是种保护",
+//                           @"阿米尔汗在印度的影响力，我国的哪位影视明星能与之齐名呢？"];
+//
+//    }
+//    return _advView;
+//}
+
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView
+{
+    CGFloat offsetY = scrollView.contentOffset.y;
+
+    if (offsetY > NAVBAR_COLORCHANGE_POINT)
+    {
+        CGFloat alpha = (offsetY - NAVBAR_COLORCHANGE_POINT) / NAV_HEIGHT;
+        [self wr_setNavBarBackgroundAlpha:alpha];
+    }
+    else
+    {
+        [self wr_setNavBarBackgroundAlpha:0];
+    }
+//
+//    //限制下拉的距离
+    if(offsetY < LIMIT_OFFSET_Y) {
+        [scrollView setContentOffset:CGPointMake(0, LIMIT_OFFSET_Y)];
+    }
+//
+//     改变图片框的大小 (上滑的时候不改变)
+//     这里不能使用offsetY，因为当（offsetY < LIMIT_OFFSET_Y）的时候，y = LIMIT_OFFSET_Y 不等于 offsetY
+//        CGFloat newOffsetY = scrollView.contentOffset.y;
+//        if (newOffsetY < -IMAGE_HEIGHT)
+//        {
+//            self.advView.frame = CGRectMake(0, newOffsetY, Screen_Width, -newOffsetY);
+//        }
+    
+    if (offsetY > self.view.frame.size.height-158) {
+        self.reachButton.hidden = NO;
+    }else {
+        self.reachButton.hidden = YES;
+    }
 }
 
 @end

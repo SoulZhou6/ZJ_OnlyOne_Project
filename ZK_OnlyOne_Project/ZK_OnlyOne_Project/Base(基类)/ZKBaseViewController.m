@@ -21,8 +21,8 @@
     if (_tableView == nil) {
         
         
-        _tableView = [[UITableView alloc]initWithFrame:CGRectMake(0, 0 , Screen_Width, Screen_Height - ZK_TopHeight-ZK_TabBarHeight)];
-        
+        _tableView = [[UITableView alloc]initWithFrame:CGRectMake(0, 0 , Screen_Width, Screen_Height - ZK_TopHeight-ZK_TabBarHeight) style:UITableViewStylePlain];
+      
         //        _tableView = [[ZKTableViewProtocol alloc]init];
         _tableView.delegate = self;
         _tableView.dataSource = self;
@@ -67,7 +67,7 @@
     [super viewDidLoad];
     
    
-    self.navigationController.navigationBar.translucent = NO;
+//    self.navigationController.navigationBar.translucent = NO;
     self.view.backgroundColor = [UIColor viewBackGroundColor];
     
 //    self.tableView.emptyDataSetSource   = self;

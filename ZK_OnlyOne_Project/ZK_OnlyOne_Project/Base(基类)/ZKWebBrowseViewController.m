@@ -84,7 +84,7 @@ static void *XFWkwebBrowserContext = &XFWkwebBrowserContext;
     switch (self.loadType) {
         case loadWebURLString:{
             //创建一个NSURLRequest 的对象
-            NSURLRequest * Request_zsj = [NSURLRequest requestWithURL:[NSURL URLWithString:self.URLString] cachePolicy:NSURLRequestUseProtocolCachePolicy timeoutInterval:10];
+            NSURLRequest * Request_zsj = [NSURLRequest requestWithURL:[NSURL URLWithString:self.URLString] cachePolicy:NSURLRequestUseProtocolCachePolicy timeoutInterval:15];
             //加载网页
             [self.wkWebView loadRequest:Request_zsj];
             break;
