@@ -8,22 +8,34 @@
 
 #import "ZKToolViewController.h"
 #import "ZKHomeHeadView.h"
+#import "ZKToolTableViewCell.h"
+
 
 
 @interface ZKToolViewController ()<UITableViewDelegate, UITableViewDataSource>
-
+@property (nonatomic,strong)NSArray * classArray;
 @end
 
 @implementation ZKToolViewController
+
+
+- (NSArray *)classArray{
+    
+    if (_classArray== nil) {
+        
+        _classArray = @[@""];
+    }
+    
+    return _classArray;
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     
     self.view.backgroundColor = [UIColor greenColor];
     self.tableView.frame = CGRectMake(0, ZK_TopHeight, Screen_Width, Screen_Height-ZK_TopHeight-ZK_TabBarHeight);
+    self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     [self.view addSubview:self.tableView];
-
-
 
     
       [self requestWeatherData];
@@ -50,24 +62,28 @@
 }
 
 
+
 #pragma mark - tableview delegate / dataSource
+
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
+    
+    return 1;
+}
+
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 40;
+    return 1;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    UITableViewCell *cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault
-                                                   reuseIdentifier:nil];
-    NSString *str = [NSString stringWithFormat:@"WRNavigationBar %zd",indexPath.row];
-    cell.textLabel.text = str;
+    ZKToolTableViewCell * cell = [ZKToolTableViewCell initWithTableView:tableView];
     return cell;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    return 60;
+    return 100;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath

@@ -418,12 +418,12 @@ static NSString *const kNewsCellReuseIdentifier = @"kNewsCellReuseIdentifier";
         if(model.thumbnail_pic_s03!=nil){
             
             return 168;
-        }else if(model.thumbnail_pic_s!=nil||model.thumbnail_pic_s02==nil){
+        }else if(model.thumbnail_pic_s!=nil&&model.thumbnail_pic_s02==nil){
             return 122;
         }else if(model.thumbnail_pic_s == nil){
             return 96;
         }else{
-            return 194;
+            return 210;
         }
     }else{
         

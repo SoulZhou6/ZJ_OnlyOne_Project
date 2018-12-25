@@ -10,6 +10,7 @@
 #import "ZKHomeViewController.h"
 #import "ZKNavigationViewController.h"
 #import "ZKDuanZiViewController.h"
+#import "ZKDrivingTestViewController.h"
 #import "ZKVideoViewController.h"
 #import "ZKToolViewController.h"
 @interface ZKTabBarController ()<UITabBarControllerDelegate>
@@ -50,7 +51,7 @@
     if (self = [super init])
     {
         [self addChildViewController:[[ZKHomeViewController alloc] init] image:@"zk_tabbar_zx_normal" seletedImage:@"zk_tabbar_zx_selected" title:@"资讯"];
-        [self addChildViewController:[[ZKDuanZiViewController alloc] init] image:@"zk_tabbar_dz_normal"  seletedImage:@"zk_tabbar_dz_selected"  title:@"段子"];
+        [self addChildViewController:[[ZKDrivingTestViewController alloc] init] image:@"zk_tabbar_dz_normal"  seletedImage:@"zk_tabbar_dz_selected"  title:@"段子"];
         [self addChildViewController:[[ZKVideoViewController alloc] init] image:@"zk_tabbar_sp_normal"  seletedImage:@"zk_tabbar_sp_selected"  title:@"视频"];
         [self addChildViewController:[[ZKToolViewController alloc] init] image:@"zk_tabbar_gj_normal"  seletedImage:@"zk_tabbar_gj_selected"  title:@"工具"];
     }

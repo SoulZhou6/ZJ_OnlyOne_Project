@@ -30,12 +30,24 @@ extern NSString * const newsWeiChatAppKey;
 extern NSString * const jokeListUrl;
 /**笑话----最新笑话---- 接口地址*/
 extern NSString * const jokeTextUrl;
+/**笑话----按更新时间查询趣图*/
+extern NSString * const jokeQueryImgByTime;
+/**笑话----最新趣图*/
+extern NSString * const jokeNewstImg;
 
 /**笑话----AppKey*/
 extern NSString * const jokeAppKey;
 
 /**天气查询接口*/
 extern NSString * const weatherUrl;
+
+/**题库接口 ---- 问题*/
+extern NSString * const queryUrl;
+/**题库接口 ---- 答案*/
+extern NSString * const answerUrl;
+
+/**题库appKey*/
+extern NSString * const queryAppkey;
 @end
 
 NS_ASSUME_NONNULL_END

@@ -31,10 +31,25 @@ NSString * const jokeListUrl = @"http://api.avatardata.cn/Joke/QueryJokeByTime";
 /**笑话----最新笑话---- 接口地址*/
 NSString * const jokeTextUrl = @"http://api.avatardata.cn/Joke/NewstJoke";
 
+/**笑话----按更新时间查询趣图*/
+NSString * const jokeQueryImgByTime = @"http://api.avatardata.cn/Joke/QueryImgByTime";
+/**笑话----最新趣图*/
+NSString * const jokeNewstImg = @"http://api.avatardata.cn/Joke/NewstImg";
+
 
 /**笑话----AppKey*/
 NSString * const jokeAppKey = @"89128014354844b08f4ecd9ce27c8041";
 
 /**天气查询接口*/
 NSString * const weatherUrl = @"https://www.apiopen.top/weatherApi";
+
+
+/**题库接口 ---- 问题*/
+NSString * const queryUrl = @"http://v.juhe.cn/jztk/query";
+/**题库接口 ---- 答案*/
+NSString * const answerUrl = @"http://v.juhe.cn/jztk/answers";
+
+/**题库appKey*/
+NSString * const queryAppkey = @"842d8dc7c199287d171caee3436ceb6b";
+
 @end

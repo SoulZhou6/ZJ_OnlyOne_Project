@@ -6,11 +6,11 @@
 //  Copyright © 2018 极客_艾欧尼亚. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import "ZKBaseTableViewCell.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface ZKToolTableViewCell : UITableViewCell
+@interface ZKToolTableViewCell : ZKBaseTableViewCell
 
 @end
 

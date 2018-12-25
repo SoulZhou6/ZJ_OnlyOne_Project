@@ -58,6 +58,12 @@
 		2FB3CE6121D0E3EA003BE195 /* ZKWeatherObj.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FB3CE5F21D0E3E9003BE195 /* ZKWeatherObj.m */; };
 		2FB3CE7021D0ED4C003BE195 /* ZKToolTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FB3CE6E21D0ED4C003BE195 /* ZKToolTableViewCell.m */; };
 		2FB3CE7121D0ED4C003BE195 /* ZKToolTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2FB3CE6F21D0ED4C003BE195 /* ZKToolTableViewCell.xib */; };
+		2FB3CE7B21D218A5003BE195 /* ZKDrivingTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FB3CE7A21D218A5003BE195 /* ZKDrivingTestViewController.m */; };
+		2FB3CE7E21D21920003BE195 /* ZKSegmentView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FB3CE7D21D21920003BE195 /* ZKSegmentView.m */; };
+		2FB3CE8121D235A2003BE195 /* ZKSingChooseTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FB3CE8021D235A2003BE195 /* ZKSingChooseTableView.m */; };
+		2FB3CE8421D241BF003BE195 /* ZKSingChooseHeadView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FB3CE8321D241BF003BE195 /* ZKSingChooseHeadView.m */; };
+		2FB3CE8621D241D1003BE195 /* ZKSingChooseHeadView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2FB3CE8521D241D1003BE195 /* ZKSingChooseHeadView.xib */; };
+		2FB3CE8921D24834003BE195 /* ZKDrivingTestObj.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FB3CE8821D24834003BE195 /* ZKDrivingTestObj.m */; };
 		2FE5E09A21C7406900C00F24 /* ZKScrollViewMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FE5E09921C7406800C00F24 /* ZKScrollViewMenu.m */; };
 		2FE5E09D21C7559A00C00F24 /* ZKWebBrowseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FE5E09C21C7559A00C00F24 /* ZKWebBrowseViewController.m */; };
 		2FE6547821C9F50000E45E5B /* GKDYPersonalViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FE6547021C9F4FF00E45E5B /* GKDYPersonalViewController.m */; };
@@ -230,6 +236,17 @@
 		2FB3CE6D21D0ED4C003BE195 /* ZKToolTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZKToolTableViewCell.h; sourceTree = "<group>"; };
 		2FB3CE6E21D0ED4C003BE195 /* ZKToolTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZKToolTableViewCell.m; sourceTree = "<group>"; };
 		2FB3CE6F21D0ED4C003BE195 /* ZKToolTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ZKToolTableViewCell.xib; sourceTree = "<group>"; };
+		2FB3CE7921D218A5003BE195 /* ZKDrivingTestViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZKDrivingTestViewController.h; sourceTree = "<group>"; };
+		2FB3CE7A21D218A5003BE195 /* ZKDrivingTestViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZKDrivingTestViewController.m; sourceTree = "<group>"; };
+		2FB3CE7C21D21920003BE195 /* ZKSegmentView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZKSegmentView.h; sourceTree = "<group>"; };
+		2FB3CE7D21D21920003BE195 /* ZKSegmentView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZKSegmentView.m; sourceTree = "<group>"; };
+		2FB3CE7F21D235A2003BE195 /* ZKSingChooseTableView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZKSingChooseTableView.h; sourceTree = "<group>"; };
+		2FB3CE8021D235A2003BE195 /* ZKSingChooseTableView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZKSingChooseTableView.m; sourceTree = "<group>"; };
+		2FB3CE8221D241BF003BE195 /* ZKSingChooseHeadView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZKSingChooseHeadView.h; sourceTree = "<group>"; };
+		2FB3CE8321D241BF003BE195 /* ZKSingChooseHeadView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZKSingChooseHeadView.m; sourceTree = "<group>"; };
+		2FB3CE8521D241D1003BE195 /* ZKSingChooseHeadView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ZKSingChooseHeadView.xib; sourceTree = "<group>"; };
+		2FB3CE8721D24834003BE195 /* ZKDrivingTestObj.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZKDrivingTestObj.h; sourceTree = "<group>"; };
+		2FB3CE8821D24834003BE195 /* ZKDrivingTestObj.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZKDrivingTestObj.m; sourceTree = "<group>"; };
 		2FE5E09821C7406800C00F24 /* ZKScrollViewMenu.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZKScrollViewMenu.h; sourceTree = "<group>"; };
 		2FE5E09921C7406800C00F24 /* ZKScrollViewMenu.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZKScrollViewMenu.m; sourceTree = "<group>"; };
 		2FE5E09B21C7559A00C00F24 /* ZKWebBrowseViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZKWebBrowseViewController.h; sourceTree = "<group>"; };
@@ -472,6 +489,8 @@
 				2F1B687021C0E9EE0082920D /* ZKNetBadView.m */,
 				2FE5E09821C7406800C00F24 /* ZKScrollViewMenu.h */,
 				2FE5E09921C7406800C00F24 /* ZKScrollViewMenu.m */,
+				2FB3CE7C21D21920003BE195 /* ZKSegmentView.h */,
+				2FB3CE7D21D21920003BE195 /* ZKSegmentView.m */,
 			);
 			path = "CustomControl(自定义控件)";
 			sourceTree = "<group>";
@@ -533,6 +552,8 @@
 			children = (
 				2F1B687B21C2070F0082920D /* ZKDuanZiViewController.h */,
 				2F1B687C21C2070F0082920D /* ZKDuanZiViewController.m */,
+				2FB3CE7921D218A5003BE195 /* ZKDrivingTestViewController.h */,
+				2FB3CE7A21D218A5003BE195 /* ZKDrivingTestViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -670,6 +691,11 @@
 				2FB342B021C6289E0027D654 /* ZKDuanziCell.h */,
 				2FB342B121C6289E0027D654 /* ZKDuanziCell.m */,
 				2FB342B221C6289E0027D654 /* ZKDuanziCell.xib */,
+				2FB3CE7F21D235A2003BE195 /* ZKSingChooseTableView.h */,
+				2FB3CE8021D235A2003BE195 /* ZKSingChooseTableView.m */,
+				2FB3CE8221D241BF003BE195 /* ZKSingChooseHeadView.h */,
+				2FB3CE8321D241BF003BE195 /* ZKSingChooseHeadView.m */,
+				2FB3CE8521D241D1003BE195 /* ZKSingChooseHeadView.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -679,6 +705,8 @@
 			children = (
 				2FB342B921C62B950027D654 /* ZKDuanziObj.h */,
 				2FB342BA21C62B950027D654 /* ZKDuanziObj.m */,
+				2FB3CE8721D24834003BE195 /* ZKDrivingTestObj.h */,
+				2FB3CE8821D24834003BE195 /* ZKDrivingTestObj.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -1025,6 +1053,7 @@
 				2FE654F421CA324F00E45E5B /* ele_sunnyNightWave1.png in Resources */,
 				2FE6550521CA324F00E45E5B /* ele_night_back_sky.png in Resources */,
 				2FE6550021CA324F00E45E5B /* ele_sunnyBird2.png in Resources */,
+				2FB3CE8621D241D1003BE195 /* ZKSingChooseHeadView.xib in Resources */,
 				2F1B682D21BF92770082920D /* Main.storyboard in Resources */,
 				2FE6551A21CA324F00E45E5B /* ele_white_cloud_9.png in Resources */,
 				2FE6551B21CA324F00E45E5B /* ele_white_cloud_8.png in Resources */,
@@ -1094,6 +1123,7 @@
 				2FE654EE21CA324E00E45E5B /* WHWeatherLightingView.m in Sources */,
 				2FE6547B21C9F50000E45E5B /* GKDYPlayerViewController.m in Sources */,
 				2F1B685521BF966B0082920D /* UITextView+Extension.m in Sources */,
+				2FB3CE8921D24834003BE195 /* ZKDrivingTestObj.m in Sources */,
 				2FE6547A21C9F50000E45E5B /* GKDYSearchViewController.m in Sources */,
 				2F1B687821C1FC3A0082920D /* ZKTableViewProtocol.m in Sources */,
 				2F2FA14521C39D4000A343DF /* ZKBaseViewController.m in Sources */,
@@ -1102,6 +1132,8 @@
 				2FB342C621C646850027D654 /* LCArrowView.m in Sources */,
 				2FB3CE2D21D0857A003BE195 /* DCCycleScrollView.m in Sources */,
 				2FE6548A21C9F51E00E45E5B /* GKDYScrollView.m in Sources */,
+				2FB3CE8121D235A2003BE195 /* ZKSingChooseTableView.m in Sources */,
+				2FB3CE7E21D21920003BE195 /* ZKSegmentView.m in Sources */,
 				2F1B684F21BF95D20082920D /* UIImage+Extension.m in Sources */,
 				2FB3CE1721D07888003BE195 /* ZKTololScrollViewController.m in Sources */,
 				2F1B688221C207350082920D /* ZKVideoViewController.m in Sources */,
@@ -1112,6 +1144,7 @@
 				2F1B686B21C0E34F0082920D /* NSObject+Extension.m in Sources */,
 				2FE6547921C9F50000E45E5B /* GKDYBaseViewController.m in Sources */,
 				2FB342C421C646850027D654 /* LCArrowCellTableViewCell.m in Sources */,
+				2FB3CE8421D241BF003BE195 /* ZKSingChooseHeadView.m in Sources */,
 				2FE6549621C9F53700E45E5B /* GKDYVideoPlayer.m in Sources */,
 				2FB342B321C6289E0027D654 /* ZKDuanziCell.m in Sources */,
 				2F1B684921BF94B20082920D /* UIColor+Extension.m in Sources */,
@@ -1121,6 +1154,7 @@
 				2FE6552121CA324F00E45E5B /* WHWeatherSnowView.m in Sources */,
 				2FE654EC21CA324E00E45E5B /* WHWeatherClound.m in Sources */,
 				2F1B687121C0E9EE0082920D /* ZKNetBadView.m in Sources */,
+				2FB3CE7B21D218A5003BE195 /* ZKDrivingTestViewController.m in Sources */,
 				2FE5E09A21C7406900C00F24 /* ZKScrollViewMenu.m in Sources */,
 				2F1B688C21C233570082920D /* ZKHomeCell.m in Sources */,
 				2F1B685921BF974C0082920D /* ZKButton.m in Sources */,

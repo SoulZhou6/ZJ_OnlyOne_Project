@@ -15,7 +15,8 @@
     NSString *cellID = NSStringFromClass([self class]);
     id cell = [tableView dequeueReusableCellWithIdentifier:cellID];
     if (!cell) {
-        cell = [[self alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:cellID];
+        cell = [[[NSBundle mainBundle] loadNibNamed:cellID owner:self options:nil] firstObject];
+        
     }
     return cell;
 }
@@ -32,11 +33,13 @@
     if (self = [super initWithStyle:style reuseIdentifier:reuseIdentifier]) {
         [self setUpSubViews];
         
+        
     }
     return self;
 }
 
 - (void)setUpSubViews{
+    
     
 }
 
